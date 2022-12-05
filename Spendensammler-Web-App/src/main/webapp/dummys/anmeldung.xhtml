@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+                 <h:outputStylesheet name="css/style.css" />
+        <title>Anmeldung</title>
+    </h:head>
+        
+    <h:body>
+        <h:form>
+            <div class="card">
+                <p:outputLabel for='vorname' value="Vorname:"/><br/>
+                <h:inputText class="texteinagbe" value="#{registrierungModel.vorname}" id='vorname' required="true"/><br/>
+                
+                <p:outputLabel for='nachname' value="Nachname:"/><br/>
+                <h:inputText class="texteinagbe" value="#{registrierungModel.nachname}" id='nachname' required="true"/><br/>
+                                
+                <p:outputLabel for='email' value="Email:"/><br/>
+                <h:inputText class="texteinagbe" value="#{registrierungModel.email}" id='email' required="true"/><br/>
+                
+                <p:outputLabel for='strasse' value="Strasse:"/><br/>
+                <h:inputText class="texteinagbe" value="#{registrierungModel.strasse}" id='strasse'/><br/>
+                
+                <p:outputLabel for='postleitzahl' value="Postleitzahl:"/><br/>
+                <h:inputText class="texteinagbe" value="#{registrierungModel.postleitzahl}" id='postleitzahl'/><br/>
+                <p:keyFilter mask="num" for="postleitzahl"/><br/> 
+                
+                <p:outputLabel for='stadt' value="Stadt:"/><br/>
+                <h:inputText class="texteinagbe" value="#{registrierungModel.stadt}" id='stadt'/><br/>
+                
+                <p:outputLabel for='passwort' value="Passwort:"/><br/>
+                <h:inputText class="texteinagbe" value="#{registrierungModel.passwort}" id='passwort' required="true"/><br/>
+                
+                <h:commandButton class="button" value="Anlegen" action="#{registrierungModel.newUser}"/>
+                <h:commandButton class="button" value="Abbrechen" action="#{registrierungModel.abbrechen}" immediate="true"/><br/>
+            </div>
+        </h:form>
+   </h:body>
+</html>

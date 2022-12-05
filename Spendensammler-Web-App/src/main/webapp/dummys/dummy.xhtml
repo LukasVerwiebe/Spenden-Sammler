@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Eingabeformular</title>
+        <h:outputStylesheet name="style.css" library="css" />
+    </h:head>
+    <h:body>        
+            <h:form>
+                <h1>Benutzer Ändern</h1>
+                <div class="div-3">
+                <h2>Benutzer</h2><br/>
+                
+                <p:messages id="messages" closable="true" class="messages" showSummary="true">
+                    <p:autoUpdate/>
+                </p:messages>                
+                
+                <div class="box1">
+                <p:outputLabel for='uid' value="ID:"/><br/>
+                <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.benutzer.idBenutzer}" id='uid' disabled="true"/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='vname' value="Vorname:"/><br/>
+                <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.benutzer.vorname}" id='vname' required="true"/><br/>
+                <p:message for='vname' display="text" class="messages"/><br/><br/>
+                </div>  
+                
+                <div class="box1">
+                <p:outputLabel for='nname' value="Nachname:"/><br/>
+                <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.benutzer.nachname}" id='nname'/><br/>
+                <h:message for='nname' class='message'/><br/><br/>
+                </div> 
+                
+                <div class="box1">
+                <p:outputLabel for='email' value="Emailadresse:"/><br/>
+                <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.benutzer.emailBenutzer}" id='email'/><br/>
+                <h:message for='email' class='message'/><br/><br/>
+                </div>  
+                
+                <div class="box1">
+                <p:outputLabel for='passwort' value="Passwort:"/><br/>
+                <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.benutzer.passwort}" id='passwort'/><br/>
+                <h:message for='passwort' class='message'/><br/><br/>
+                </div> 
+                                
+                <div class="box1">
+                <p:outputLabel for='stadt' value="Stadt:"/><br/>
+                <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.benutzer.stadt}" id='stadt'/><br/>
+                <h:message for='stadt' class='message'/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='strasse' value="Strasse"/><br/><br/>
+                <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.benutzer.strasse}" id='strasse'/><br/>
+                <p:message for='strasse' display="text" class="messages"/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='postlz' value="Postleitzahl"/><br/>
+                <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.benutzer.postleitzahl}" id='postlz' maxlength="10"/><br/>
+                <p:keyFilter mask="num" for="postlz"/><br/>
+                <h:message for='postlz' class='message'/><br/><br/>
+                </div> 
+                
+                <div class="box1">
+                <p:outputLabel for='status' value="Status:"/><br/><br/>
+                <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.benutzer.statusBenutzer}" id='status'/><br/>
+                <p:message for='status' display="text" class="messages"/><br/><br/>
+                </div>
+                
+                </div>
+                
+                <h:commandButton class="button" value="Ändern" action="#{benutzerUpdateModel.updateUser}"/>
+                <h:commandButton class="button" value="Abbrechen" action="#{benutzerUpdateModel.abbrechen}" immediate="true"/><br/>
+                
+                
+            </h:form>
+    </h:body>
+</html>

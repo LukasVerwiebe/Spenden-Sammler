@@ -1,0 +1,17 @@
+spendensammler\jpa\entities\Charity_Organisation.class
+spendensammler\jpa\entities\Charitydao.class
+spendensammler\jpa\entities\Charity.class
+spendensammler\jpa\dao\Datenzugriffsobjekt.class
+spendensammler\jpa\entities\Dummy.class
+spendensammler\jpa\dao\exception\InputException.class
+spendensammler\jpa\entities\Benutzer.class
+spendensammler\jpa\entities\Bankkonto.class
+spendensammler\jpa\entities\Charitydao_locationdao.class
+module-info.class
+spendensammler\jpa\entities\Kategorie.class
+spendensammler\jpa\entities\Location.class
+spendensammler\jpa\entities\Locationdao.class
+spendensammler\jpa\entities\PlaceOfAction.class
+spendensammler\jpa\entities\Quittung.class
+spendensammler\jpa\entities\Einkommen.class
+spendensammler\jpa\entities\Charityorganizationdao.class

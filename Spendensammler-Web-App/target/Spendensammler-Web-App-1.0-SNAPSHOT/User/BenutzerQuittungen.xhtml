@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Spenden-Almanach | Verwaltung</title>
+        <h:outputStylesheet name="style.css" library="css" />
+    </h:head>
+    <h:body>        
+<div class="oben">
+            <h:form id="navbalken">
+
+                <p:growl id="messages"/>
+                <h:graphicImage style ="margin-left:15px" class ="image" value = "/images/spendenlogo.PNG"/>
+                <div class="navBox">
+
+                    <p:menubar>                    
+                        <p:menuitem value="Start" icon="pi pi-fw pi-home" action="/startseite.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+                         
+                        <p:menuitem value="Organisationen" icon="pi pi-fw pi-heart" action="/Organisationen.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+                        <p:menuitem value="Datenauswertung" icon="pi pi-fw pi-spinner" action="/Datenauswertung.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:divider layout="vertical"/>
+                        <p:menuitem value="|" disabled="true"/>
+                        
+                        <p:menuitem value="Registrieren" icon="pi pi-fw pi-user-edit" action="/User/register.xhtml?faces-redirect=true" rendered="#{!sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{!sessionData.eingeloggt}" />
+                        <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden').show();" rendered="#{!sessionData.eingeloggt}"/>
+                        
+                        <p:menuitem value="Einstellungen" icon="pi pi-fw pi-cog" action="#{startseiteModel.einstellungen}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="Logout" icon="pi pi-fw pi-sign-out" action="#{benutzerUpdateModel.logOut}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+
+
+                    </p:menubar>
+                    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+                    <p:dialog header="Anmeldung" widgetVar="anmelden" modal="true" resizable="false">
+
+                        <p:panelGrid id="grid" styleClass="">
+                            <p:row>
+                                <p:column>
+                                    <p:outputLabel for='email' value="Emailadresse:"/>
+                                </p:column>
+                                <p:column>        
+                                    <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email'/>
+                                    <p:message for='email' class='message'/>
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column>
+                                    <p:outputLabel for='passwort' value="Passwort:"/>
+                                </p:column>    
+                                <p:column>    
+                                    <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort'/>
+                                    <p:message for='passwort' class='message'/>
+                                </p:column>
+                            </p:row>        
+                            <p:row>
+                                <p:column>    
+                                    <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl"/>
+                                    <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden').hide();" immediate="true" ajax="false"/>
+                                </p:column>
+                            </p:row>
+                        </p:panelGrid>
+                    </p:dialog>
+
+                </div>
+            </h:form>                      
+        </div>
+        
+        <div class="innen">
+            
+            <div class ="navBoxVertical">
+                <h:form>
+                    <div>
+
+                        <p:menu>
+                            <p:menuitem value="Benutzerdaten" icon="pi pi-fw pi-heart" action="/User/BenutzerVerwaltung.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="" disabled="true"/>
+                            <p:menuitem value="Quittung" icon="pi pi-fw pi-user-edit" action="/User/BenutzerQuittungen.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="" disabled="true"/>
+                            <p:menuitem value="Daten" icon="pi pi-fw pi-sign-in" action="/User/UserDaten.xhtml?faces-redirect=true"/>
+
+                        </p:menu>
+                    </div>
+                </h:form>             
+            </div>
+            
+        <div class="contentbox1-1">
+        <h:form id="tabelle">
+        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+        
+        <p:dataTable id="checkboxDT" widgetVar="dtWidgetVar" var="quittung" value="#{benutzerQuittungenModel.quittungenListe}"
+                    paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                    currentPageReportTemplate="(Eintrag: {startRecord} - {endRecord} von {totalRecords}, Seite: {currentPage} von {totalPages})"
+                    selection="#{benutzerQuittungenModel.selectedQuittungenListe}" rowKey="#{quittung.idQuittung}"
+                    style="margin-bottom:0" paginator="true" rows="9" rowsPerPageTemplate="3,6,9"
+                    selectionPageOnly="false" >
+            
+<!--            <f:facet name="header">
+                <div class="p-d-flex p-ai-center p-jc-between">
+                    <p:inputText id="globalFilter" onkeyup="PF('dtWidgetVar').filter()" style="width:20rem" placeholder="Geben Sie einen Wert ein" />&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p:commandButton id="toggler" type="button" value="Spalten" icon="pi pi-align-justify"/>
+                    <p:columnToggler datasource="checkboxDT" trigger="toggler"/>
+                </div>                
+            </f:facet>-->
+            
+            <p:column headerText="*" selectionMode="multiple" style="width:50px;text-align:center"/>            
+            
+            <p:column headerText="ID" sortBy="#{quittung.idQuittung}" filterBy="#{quittung.idQuittung}" style="width:100px; text-align:center">
+                <h:outputText value="#{quittung.idQuittung}" />
+            </p:column>
+            
+            <p:column headerText="Grund" sortBy="#{quittung.textQuittung}" filterBy="#{quittung.textQuittung}" style="width:300px; text-align:left">
+                <h:outputText value="#{quittung.textQuittung}" style="width:300px; text-align:left; line-height: 120%"/>
+            </p:column>
+            
+            <p:column headerText="Summe" sortBy="#{quittung.summeQuittung}" filterBy="#{quittung.summeQuittung}" style="width:300px; text-align:left">
+                <h:outputText value="#{quittung.summeQuittung}" style="width:300px; text-align:left; line-height: 120%"/>
+            </p:column>
+            
+            <p:column style="width:200px;">
+                <f:facet name="header">
+                    <h:outputText value="Aktion"></h:outputText>
+                </f:facet>
+                <p:commandButton class="buttontabelle" value="Ansehen" action="#{benutzerQuittungenModel.showSelectedQuittung(quittung)}"></p:commandButton>
+            </p:column>
+            
+        </p:dataTable>
+        
+        </h:form>
+            
+                
+            </div>
+            
+        </div>
+        
+              <div class="unten">
+            <h:form id="fussbalken">
+                
+                <div class="conainterfuss1">
+                    <div class="kontakt">
+                        <h3>Kontakt</h3>
+                        Adresse: Neidenburger Str. 43<br></br><br></br>
+                        Postleitzahl: 45897 Gelsenkirchen<br></br><br></br>
+                        Email: spendensammler@mail.com<br></br><br></br>
+                        Telefon: 029320301202<br></br><br></br><br></br><br></br><br></br>
+                        
+                        Copyright © 2022 Spenden-Almanach<br></br>
+                    </div>
+                    <div class="Support">
+                        <h3>Support</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Support-Portal"></p:link><br></br><br></br>
+                    </div>
+                    <div class="unternehmen">
+                        <h3>Unternehmen</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Über uns"></p:link><br></br><br></br>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Kontakt"></p:link><br></br><br></br>
+                    </div>
+                    <div class="links1">
+                        <h3>Links</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Twitter"></p:link><br></br><br></br>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Youtube"></p:link><br></br><br></br>
+                    </div>
+                </div>
+            </h:form>          
+        </div>
+    
+   </h:body>
+</html>

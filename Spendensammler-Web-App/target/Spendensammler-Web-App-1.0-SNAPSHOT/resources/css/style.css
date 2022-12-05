@@ -1,0 +1,707 @@
+/* 
+    Created on : 29.04.2022, 13:52:37
+    Author     : lu80238
+*/
+
+
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 18px;
+    font-weight: normal;
+    color: black;
+    background-color: white;
+    line-height: 12px;
+    height: 96vh;
+    width: 99vw;
+    margin:0px;
+    margin: 0 auto;
+    /*background-color:grey;*/
+    /*background-image: url('img_girl.jpg');*/
+}
+
+div{
+    /*padding: 10px;*/
+    overflow: auto;
+    margin:  0 auto;
+}
+
+table,th,td {
+    border:1px solid #000000;
+    border-collapse: collapse;
+    border-width: 1px;
+    margin: 4px;
+    padding: 4px;
+    text-align: center;
+}
+
+th {
+    
+    border-collapse: collapse;
+    border-width: 1px;
+    margin: 4px;
+    padding: 4px;
+    text-alitgn: center;
+}
+#checkboxDT{
+    
+    
+}
+h3{
+    text-decoration: underline;
+}
+h5{
+    text-decoration: underline;
+    font-size: 30px;
+    margin: 0 auto;
+    text-align:center;
+}
+input[type=text] {
+    border-radius: 4px;
+    width: 90%;
+    height: 40px;
+    font-size:20px;
+    resize: none;
+    box-shadow: none;
+    background-color:#F0F0F0;
+}
+input[type=password] {
+    border-radius: 4px;
+    width: 90%;
+    height: 45px;
+    resize: none;
+    box-shadow: none;
+    background-color:#F0F0F0;
+}
+/*.ui-outputlabel{
+color:blue;
+font-color:red;
+}   */
+
+html {
+    min-height: 100%;
+    /*background-color: #92a8d1;*/
+    font-family: fantasy;
+}
+
+label {
+    line-height: 10px;
+}
+
+h1 {
+    text-decoration: underline;
+    color: black;
+}
+
+#abreich {
+    font-family:sans-serif;
+    width: 200px;
+}
+
+.ui-outputlabel{
+    color:black;
+}   /*
+*/
+.ui-column:hover {
+    background: lightskyblue;
+}
+.ui-row:hover {
+    background: lightskyblue;
+}
+
+.oben {
+    /*float: left;*/
+    width: 100%;
+    height: 130px;
+    text-align: left;
+    border-bottom: 1px solid lightgrey;
+    border-top: 1px solid green;
+    border-left: 1px solid green;
+    border-right: 1px solid green;
+    /*padding: 15px;*/
+    /*background-color: white;*/
+    background-color: white;
+}
+.innen {
+    /*float: left;*/
+    width: 100%;
+     height: 90%;
+    text-align: left;
+    border-bottom: 0px solid green;
+    border-top: 0px solid green;
+    border-left: 0px solid green;
+    border-right: 0px solid green;
+    padding: 0px;
+   
+    background-color: white;
+    display:flex;
+    
+}
+.unten {
+    /*float: left;*/
+    width: 100%;
+     /*height: 20%;*/
+    /*text-align: center;*/
+    border-bottom: 0px solid green;
+
+    border-left: 0px solid green;
+    border-right: 0px solid green;
+    padding: 0px;
+   
+    background-color:#285185;
+    color:white;
+    /*margin-bottom:50px;*/
+}
+
+.navBox{    
+    width: 98%;
+    /*text-align: center;*/
+    margin-left:15px;
+    border-bottom: 0px solid green;
+    border-top: 0px solid green;
+    border-left: 0px solid green;
+    border-right: 0px solid green;
+   
+}
+
+.contenbox {  
+   /*overflow:hidden;*/
+    width: 85%;
+    height: 100%;
+
+    /*background-color: white;*/
+}
+
+.contenbox1 {  
+    width: 75%;
+    height: 100%;
+
+}
+.contentbox1 {  
+    width: 15%;
+    height: 100%;
+  /*background-color: blue;*/
+}
+.contentbox2 {  
+    width: 60%;
+    height: 100%;
+
+     /*background-color:brown;*/
+}
+.contentbox3 {  
+    width: 15%;
+    height: 100%;
+
+     /*background-color: grey;*/
+}
+.contentbox1-1{
+    width: 100%;
+
+}
+.contentbox1-1form {  
+    /*width: 100%;*/
+    height:100%;
+
+    /*text-align: center;*/
+}
+.contentbox2-1{
+    /*color:red;*/
+    width: 15%;
+    height: 100%;
+
+}
+.contentbox2-2{
+    width: 85%;
+    height: 100%;
+
+     /*background-color: red;*/
+    
+}
+.contentboxstart-1{
+    /*color:red;*/
+    width: 85%;
+    height: 95%;
+    /*overflow:hidden;*/
+
+}
+.contentboxstart-2{
+    width: 15%;
+    height: 95%;
+
+     /*background-color: grey;*/
+    
+}
+.contentbox3-1{
+     width: 10%;
+    height: 95%;
+}
+.contentbox3-2{
+    width: 75%;
+    height: 95%;
+}
+.contentbox3-3{
+    width: 15%;
+    height: 95%;
+}
+.hiddenbox{
+   height:80px;
+    padding: 10px;
+    overflow: hidden;
+    width:100%;
+    
+}
+.columnform{
+    /*background-color:#E6E6FA;*/
+/*    background-color:yellow;
+         display:flex;
+     flex-direction:row;
+     text-align:center;
+     align-items: center;
+  justify-content: center;
+  gap: -10px;
+     margin:0px auto;*/
+/*display:flex;
+flex-direction:column;*/
+/*text-align:center;*/
+/*float:left;*/
+overflow:hidden;
+}
+.nobordergrid td{
+   border: none;
+   /*background-color:green;*/
+}
+.form1{
+    height:500px;
+     width: 15%;
+
+     margin:0px;
+}
+.form2{
+    height:500px;
+   width: 15%;
+
+   margin:0px;
+       overflow : hidden;
+}
+.form3{
+    height:500px;
+     width: 15%;
+overflow:hidden;
+     margin:0px
+    
+}
+input .rolle{
+  
+     width:60%;
+     /*background-color:red;*/
+}
+input .vorname{
+     width:80%;
+     /*float:left;*/
+    
+}
+input .nachname{
+   object-position:500px;
+    width:60%;
+     /*float:left;*/
+    
+}
+input .postleitzahl{
+  
+    width:30%;
+     /*float:left;*/
+}
+input .stadt{
+ 
+     width:50%;
+     /*float:left;*/
+}
+input .strasse{
+   
+     width:60%;
+     /*float:left;*/
+}
+input .email{
+   
+     width:60%;
+     /*float:left;*/
+}
+input .passwort{
+   
+     width:60%;
+     /*float:left;*/
+}
+.buttonsmiddle{
+    width: 100%;
+    text-align:center;
+    /*align-content: center;*/
+   }
+
+.contentbox3-1{
+    
+}
+.contentbox3-2{
+    
+}
+.contentbox3-3{
+    
+}
+.conainterfuss1 {
+    /*overflow:hidden;*/
+    height:50%;
+    display: flex;
+    /*flex-direction: row;*/
+    /*float: left;*/
+    /* width: 33.33%; three boxes (use 25% for four, and 50% for two, etc) */
+    /* padding: 50px; if you want space between the images */
+    line-height: 10px;
+    font-size: 15px;
+    margin-bottom:10px;
+   
+}
+.image{
+    margin-left:15px;
+     padding-right: 0px;
+     /*margin-right: -2px;*/
+}
+.kontakt{
+    overflow:hidden;
+    /*padding-right: 20px;*/
+    
+}
+.Support{
+    /*padding-right: 20px;*/
+}
+.unternehmen{
+    /*padding-right: 20px;*/
+}
+.links1{
+    /*padding-right: 20px;*/
+}
+.bezahltaktion { 
+    /*display: none;*/
+}
+
+
+.navBoxVertical{
+    
+
+    
+}
+
+
+.contextmenu {
+    font-size: 15px;
+}
+
+.buttonpup {
+    font-size:15px !important;
+}
+
+/*.texteinagbe {
+    border: 2px solid green;
+    border-radius: 4px;
+    width: 90%;
+    height: 25px;
+    resize: none;
+    box-shadow: none;
+    background-color:red;
+    
+}*/
+input:hover{
+    background-color:lightskyblue;
+}
+
+.box, .box0, .box1, .box2, .box3, .box4, .box5, .box6, .box7 {
+    /*float: left;*/
+   height:100px;
+    padding: 10px;
+    overflow: hidden;
+    width:430px;
+    margin: 0;
+    line-height:25px;
+    /*float:left;*/
+    /*padding-left: px;*/
+    
+    /*box-sizing: border-box;*/
+}
+.boxdatafields{
+    height:auto;
+    margin:0 auto; 
+    text-align:center;
+    width:30%;
+}
+.boxbig{
+    width:100%;
+    padding:10px;
+}
+.boxbundle{
+        line-height:25px;
+    width:450px;
+   height:100px;
+    padding: 10px;
+    overflow: hidden;
+    display: inline-block;
+    margin:  0;
+}
+.boxtest{
+   height:80px;
+    padding: 10px;
+    overflow: hidden;
+}
+.formtrick{
+    width:50%;
+    left:10%;
+}
+
+.hbutton {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+   
+    cursor: pointer;
+}
+
+.button {
+    border-width: thin;
+    padding: 15px 55px;
+    font-size: 16px;
+    margin: 4px 2px;
+    color: blue;
+    font-family:sans-serif;
+    background-color: whitesmoke;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: lightskyblue;
+}
+
+button.ui-button {
+    padding: 10px 32px;
+    font-size: 16px;
+    margin: 4px 2px;
+    font-family:sans-serif;
+    color: blue;
+}
+
+button.ui-button:hover {
+    background: lightskyblue;
+}
+
+.message{
+    color: blue;
+}
+
+.messages {
+    color: red;
+    line-height: 120%;
+
+}
+
+
+
+
+span + span {
+    margin-left: 50px;
+}
+
+.rightmost{;
+}
+.yellow{
+    background: yellow;
+}
+
+p{
+    font-size: 20px;
+    padding: 15px;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: #04AA6D;
+    color: black;
+    padding: 15px;
+    font-size: 16px;
+    border: none;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.grey{
+    background-color:lightgrey;
+}
+
+/* mouse over link */
+a:hover {
+    color: lightskyblue;
+}
+.white{
+    background-color: whitesmoke;
+    padding: 5px;
+}
+.main{
+    background-color:grey
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 10%;
+    width: 100%;
+    background-color: black;
+    color: grey;
+
+
+}
+.flex-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 25%;
+    width: 100%;
+    background-color: black;
+    color: grey;
+    display: flex;
+    flex-flow: row wrap;
+
+    /* Then we define how is distributed the remaining space */
+    justify-content: space-around;
+
+}
+h2{
+
+    color:grey;
+}
+
+/*.centerdiv{
+    position: absolute;
+    z-index: 15;
+    top: 50%;
+    left: 20%;
+    margin: -100px 0 0 -150px;
+}*/
+
+.paypalidinput{
+    display: none;
+
+}
+
+     
+    
+
+
+
+/*input{
+    background-color:lightgray;
+}*/
+
+.labelhide{
+    display:none;
+}
+.menuhide{
+    visibility:hidden;
+}
+a{
+    color:skyblue;
+}
+.hidden{
+    visibility:hidden;
+}
+
+.search-box{
+           
+            width: 45%;
+            display: flex;
+            padding-bottom: 3px;
+            border-bottom: 1px solid #ddd;
+            margin-top: 100px;
+          
+
+            
+        }
+        .left-column ,.right-column {
+            flex-basis: 50%;
+
+
+
+        }
+        .right-column img{
+            margin-top: 30px;
+            width: 80%;
+
+
+        }
+        .banner{
+            display: flex;
+            background-color: mistyrose;
+            margin-top: 0cm;
+        }
+        
+        .button button {
+            padding: 7px 30px;
+            margin-right: 15px;
+            outline: none;
+            border: 1px solid #0082e6;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #0082e6;
+            background: transparent;
+        }
+        
+        input[type=button], input[type=submit], input[type=reset]{
+            padding: 7px 30px;
+            margin-right: 15px;
+            outline: none;
+            border: 1px solid #0082e6;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #0082e6;
+            background: transparent;
+        }

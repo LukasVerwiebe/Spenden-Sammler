@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Spenden-Almanach | Startseite</title>
+        <h:outputStylesheet name="style.css" library="css" />
+    </h:head>
+    <h:body>        
+      <div class="oben">
+            <h:form id="navbalken">
+
+                <p:growl id="messages"/>
+                <h:graphicImage style ="margin-left:15px" class ="image" value = "/images/spendenlogo.PNG"/>
+                <div class="navBox">
+
+                     <p:menubar>                    
+                        <p:menuitem value="Start" icon="pi pi-fw pi-home" action="/startseite.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+                         
+                        <p:menuitem value="Organisationen" icon="pi pi-fw pi-heart" action="/Organisationen.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+                        <p:menuitem value="Datenauswertung" icon="pi pi-fw pi-spinner" action="/Datenauswertung.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:divider layout="vertical"/>
+                        <p:menuitem value="|" disabled="true"/>
+                        
+                        <p:menuitem value="Registrieren" icon="pi pi-fw pi-user-edit" action="/User/register.xhtml?faces-redirect=true" rendered="#{!sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{!sessionData.eingeloggt}" />
+                        <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden').show();" rendered="#{!sessionData.eingeloggt}"/>
+                        
+                        <p:menuitem value="Einstellungen" icon="pi pi-fw pi-cog" action="#{startseiteModel.einstellungen}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="Logout" icon="pi pi-fw pi-sign-out" action="#{benutzerUpdateModel.logOut}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+
+
+                    </p:menubar>
+
+                    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+                    <p:dialog header="Anmeldung" widgetVar="anmelden" modal="true" resizable="false">
+
+                        <p:panelGrid id="grid" styleClass="">
+                            <p:row>
+                                <p:column>
+                                    <p:outputLabel for='email' value="Emailadresse:"/>
+                                </p:column>
+                                <p:column>        
+                                    <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email'/>
+                                    <p:message for='email' class='message'/>
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column>
+                                    <p:outputLabel for='passwort' value="Passwort:"/>
+                                </p:column>    
+                                <p:column>    
+                                    <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort'/>
+                                    <p:message for='passwort' class='message'/>
+                                </p:column>
+                            </p:row>        
+                            <p:row>
+                                <p:column>    
+                                    <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl"/>
+                                    <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden').hide();" immediate="true" ajax="false"/>
+                                </p:column>
+                            </p:row>
+                        </p:panelGrid>
+                    </p:dialog>
+
+                </div>
+            </h:form>                      
+        </div>
+
+        <div class="innen" style="height:3000px">
+
+            <div class="contenbox1">
+                <br/>
+                
+                <h5>Aktuelle-Datenauswertung</h5>
+                <p>In den letzten Jahren konnten wir bereits erfolgreich mit mehreren Hundert Spendenorganisationen erfolgreich zusammen arbeiten.
+                Auf dieser Seite möchten wir Ihnen die Ergebnisse dieser Zusammenarbeit Präsentieren. Dazu haben wir die Einahmen durch Spenden 
+                sowie die Anzahl dieser für Sie in Ausbereitet. Bei den angezeigten Zahlen handelt es sich um die Aktuellen echtzeit Zahlen aus dem System.</p>
+                
+                <p>Wir hoffen Sie mit dieser Transparenten Darstellung über die Nutzung unserer Webseite davon Überzeugen zu können sich als Spender oder als 
+                    Spendenorganisation zu Registieren und unsere Dienste in Anspruch zu nehmen.</p>
+
+                <div class="boxbig">
+                <h5>Anzahl von Spenden</h5><br/>
+                    <p:barChart model="#{datenauswertungModel.barModel}" style="width: 100%; height: 500px;"/><br/>
+                </div>  
+                <p>An dieser Stelle können Sie sehen wie der Aktuelle Spendenstand in diesem Jahr ist, dargestellt für jeden einzelnen Monat als Balkendiagramm.</p>
+                
+                <div class="boxbig">
+                <h5>Einkommen in diesem Jahr</h5><br/>
+                    <p:lineChart model="#{datenauswertungModel.lineModel}" style="width: 100%; height: 500px;"/><br/>
+                </div> 
+                <p>Für eine bessere Darstellung des Aktuellen Spendenstand in diesem Jahr wurden die Daten zusätzlich für jeden einzelnen Monat als Liniendiagramm aufbereitet.</p>
+                
+                <div class="boxbig">
+                <h5>Einkommen pro Jahr</h5><br/>
+                    <p:barChart model="#{datenauswertungModel.barModel2}" style="width: 100%; height: 500px;"/><br/>
+                </div> 
+                <p>Hier können Sie eine Übersicht über alle Spenden der letzten fünf Jahre sehen, dargestellt als Balkendiagramm.</p>
+                
+                <div class="boxbig">
+                <h5>Spender und Organisationen</h5><br/>            
+                    <p:pieChart model="#{datenauswertungModel.pieModel}" style="width: 100%; height: 500px;"/><br/>    
+                </div>
+                <p>Zusätzlich zu den Spendensummen ist es uns wichtig eine Übersicht über die Aktuellen Nutzer unserer Webseite zur Verfügung zu stellen. Sie können hier in 
+                    blau dargestellt die Registierten Spender sehen und in rot die Anzahl der Registierten Spendenorganisationen.</p>
+                
+            </div>
+            
+        </div>
+        
+        <div class="unten">
+            <h:form id="fussbalken">
+                
+                <div class="conainterfuss1">
+                    <div class="kontakt">
+                        <h3>Kontakt</h3>
+                        Adresse: Neidenburger Str. 43<br></br><br></br>
+                        Postleitzahl: 45897 Gelsenkirchen<br></br><br></br>
+                        Email: spendensammler@mail.com<br></br><br></br>
+                        Telefon: 029320301202<br></br><br></br><br></br><br></br><br></br>
+                        
+                        Copyright © 2022 Spenden-Almanach<br></br>
+                    </div>
+                    <div class="Support">
+                        <h3>Support</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Support-Portal"></p:link><br></br><br></br>
+                    </div>
+                    <div class="unternehmen">
+                        <h3>Unternehmen</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Über uns"></p:link><br></br><br></br>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Kontakt"></p:link><br></br><br></br>
+                    </div>
+                    <div class="links1">
+                        <h3>Links</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Twitter"></p:link><br></br><br></br>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Youtube"></p:link><br></br><br></br>
+                    </div>
+                </div>
+            </h:form>          
+        </div>
+    
+   </h:body>
+</html>

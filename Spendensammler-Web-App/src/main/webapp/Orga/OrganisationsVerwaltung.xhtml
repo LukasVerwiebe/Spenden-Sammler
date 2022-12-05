@@ -1,0 +1,289 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Eingabeformular</title>
+        <h:outputStylesheet name="style.css" library="css" />
+    </h:head>
+    <h:body>
+        <div class="oben">
+            <h:form id="navbalken">
+
+                <p:growl id="messages"/>
+                <h:graphicImage style ="margin-left:15px" class ="image" value = "/images/spendenlogo.PNG"/>
+                <div class="navBox">
+
+                    <p:menubar>                    
+                        <p:menuitem value="Start" icon="pi pi-fw pi-home" action="/startseite.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+                         
+                        <p:menuitem value="Organisationen" icon="pi pi-fw pi-heart" action="/Organisationen.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+                        <p:menuitem value="Datenauswertung" icon="pi pi-fw pi-spinner" action="/Datenauswertung.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:divider layout="vertical"/>
+                        <p:menuitem value="|" disabled="true"/>
+                        
+                        <p:menuitem value="Registrieren" icon="pi pi-fw pi-user-edit" action="/User/register.xhtml?faces-redirect=true" rendered="#{!sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{!sessionData.eingeloggt}" />
+                        <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden').show();" rendered="#{!sessionData.eingeloggt}"/>
+                        
+                        <p:menuitem value="Einstellungen" icon="pi pi-fw pi-cog" action="#{startseiteModel.einstellungen}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="Logout" icon="pi pi-fw pi-sign-out" action="#{benutzerUpdateModel.logOut}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+
+
+                    </p:menubar>
+
+                    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+                    <p:dialog header="Anmeldung" widgetVar="anmelden" modal="true" resizable="false">
+
+                        <p:panelGrid id="grid" styleClass="">
+                            <p:row>
+                                <p:column>
+                                    <p:outputLabel for='email' value="Emailadresse:"/>
+                                </p:column>
+                                <p:column>        
+                                    <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email'/>
+                                    <p:message for='email' class='message'/>
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column>
+                                    <p:outputLabel for='passwort' value="Passwort:"/>
+                                </p:column>    
+                                <p:column>    
+                                    <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort'/>
+                                    <p:message for='passwort' class='message'/>
+                                </p:column>
+                            </p:row>        
+                            <p:row>
+                                <p:column>    
+                                    <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl"/>
+                                    <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden').hide();" immediate="true" ajax="false"/>
+                                </p:column>
+                            </p:row>
+                        </p:panelGrid>
+                    </p:dialog>
+
+                </div>
+            </h:form>                      
+        </div>
+        
+        
+        <div class="innen" style="height:3000px">
+            
+            <div class ="navBoxVertical">
+                <h:form>
+                    <div>
+
+                        <p:menu>
+                            <p:menuitem value="Benutzerdaten" icon="pi pi-fw pi-heart" action="/Orga/OrgaVerwaltung.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="" disabled="true"/>
+                            <p:menuitem value="Organisation" icon="pi pi-fw pi-user-edit" action="/Orga/OrganisationsVerwaltung.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="" disabled="true"/>
+                            <p:menuitem value="Arbeitsbereiche" icon="pi pi-fw pi-sign-in" action="/Orga/OrgaArbeitsbereiche.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="" disabled="true"/>
+                            <p:menuitem value="Kategorien" icon="pi pi-fw pi-sign-in" action="/Orga/OrgaKategorien.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="" disabled="true"/>
+                            <p:menuitem value="Quittungen" icon="pi pi-fw pi-sign-in" action="/Orga/OrgaQuittungen.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="" disabled="true"/>
+                            <p:menuitem value="Einkommen" icon="pi pi-fw pi-sign-in" action="/Orga/OrgaEinkommen.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="" disabled="true"/>
+                            <p:menuitem value="Bankkonten" icon="pi pi-fw pi-sign-in" action="/Orga/OrgaBankkonto.xhtml?faces-redirect=true"/>
+                            <p:menuitem value="" disabled="true"/>
+                            <p:menuitem value="Daten" icon="pi pi-fw pi-sign-in" action="/Orga/OrgaDaten.xhtml?faces-redirect=true"/>
+
+                        </p:menu>
+                    </div>
+                </h:form>             
+            </div>
+        
+            <div class="contenbox" style="">
+        
+            <h:form>
+                <h1>Eingabewerte Ändern</h1>
+                <div class="div-3">
+                <h2>Charity</h2><br/>
+                
+                <p:messages id="messages" closable="true" class="messages" showSummary="true">
+                    <p:autoUpdate/>
+                </p:messages>                
+                
+                <div class="box1">
+                <p:outputLabel for='chid' value="ID:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.idCharity}" id='chid' disabled="true"/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='oname' value="Organisationsname:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.name}" id='oname' required="true"/><br/>
+                <p:message for='oname' display="text" class="messages"/><br/><br/>
+                </div>  
+                
+                <div class="box1">
+                <p:outputLabel for='weltansicht' value="Weltansicht:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.worldview}" id='weltansicht'/><br/>
+                <h:message for='weltansicht' class='message'/><br/><br/>
+                </div> 
+                
+                <div class="box1">
+                <p:outputLabel for='gjahr' value="Gründungsjahr:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.foundingYear}" id='gjahr' maxlength="4"/><br/>
+                <p:keyFilter mask="num" for="gjahr"/><br/>
+                <h:message for='gjahr' class='message'/><br/><br/>
+                </div>  
+                
+                <div class="box1">
+                <p:outputLabel for='logo' value="Link für Logo:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.logoPath}" id='logo'/><br/>
+                <h:message for='logo' class='message'/><br/><br/>
+                </div> 
+                
+                <div class="box1">
+                <p:outputLabel for='homepage' value="Link für Homepage:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.homepage}" id='homepage'/><br/>
+                <h:message for='homepage' class='message'/><br/><br/>
+                </div>
+                
+                <div class="boxbig">
+                <p:outputLabel for='abreich' value="Aktionsbereich:"/><br/>
+                <h:inputTextarea rows="10" cols="10" class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.fieldsOfAction}" id='abreich' required="true" style="font-family: arial; font-size: 20px; width:90%; text-align: justify"/><br/><br/>
+                <p:message for='abreich' display="text" class="messages"/><br/><br/>
+                </div>
+                
+                <div class="boxbig">
+                <p:outputLabel for='finanzen' value="Finanzplan:"/><br/>
+                <h:inputTextarea rows="10" cols="10" class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.advertingFinancialInspektion}" id='finanzen' required="true" style="font-family: arial; font-size: 20px; width:90%; text-align: justify"/><br/><br/>
+                <p:message for='finanzen' display="text" class="messages"/><br/><br/>                
+                </div><br/><br/>
+                
+                </div>
+                
+                <p></p>
+                <!--<div class="boxbundle" style="height:500px;">-->
+                <h2>Charity Organisation</h2><br/>
+                
+                <div class="box1">
+                <p:outputLabel for='member' value="Anzahl der Mitglieder:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.ch_orga.membercount}" id='member'/>
+                <p:keyFilter mask="num" for="member"/>
+                <h:message for='member' class='message'/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='angestellte' value="Anzahl der Angestellten:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.ch_orga.employeecount}" id='angestellte' required="true"/>
+                <p:keyFilter mask="num" for="angestellte"/><br/>               
+                <p:message for='angestellte' display="text" class="messages"/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='helfer' value="Anzahl der Freiwilligen Helfer:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.ch_orga.volounteersCount}" id='helfer'/>
+                <p:keyFilter mask="num" for="helfer"/>          
+                <h:message for='helfer' class='message'/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='management' value="Management:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.ch_orga.managmentbody}" id='management'/><br/>
+                <h:message for='management' class='message'/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='orgajahr' value="Jahr:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.ch_orga.orgaYear}" id='orgajahr' required="true" maxlength="4"/>
+                <p:keyFilter mask="num" for="orgajahr"/>
+                <p:message for='orgajahr' display="text" class="messages"/><br/><br/>
+                </div>
+                
+                <!--</div>-->
+                
+                <div class="boxbundle" style="height:400px;">
+                <h2>Standort</h2><br/>
+                
+                <div class="box1">
+                <p:outputLabel for='strasse' value="Strasse:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.strasse}" id='strasse'/><br/>
+                <h:message for='strasse' class='message'/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='stadt' value="Stadt:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.stadt}" id='stadt'/><br/>
+                <h:message for='stadt' class='message'/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='postl' value="Postleitzahl:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.postleitzahl}" id='postl'/><br/>
+                <h:message for='postl' class='message'/><br/><br/>
+                </div>
+                
+                </div>
+                
+                <div class="boxbundle" style="height:400px;">
+                <h2>Kontaktdaten</h2><br/>
+                
+                <div class="box1">
+                <p:outputLabel for='telefon' value="Telefon:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.telefon}" id='telefon'/><br/>
+                <h:message for='telefon' class='message'/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='telefax' value="Telefax:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.telefax}" id='telefax'/><br/>
+                <h:message for='telefax' class='message'/><br/><br/>
+                </div>
+                
+                <div class="box1">
+                <p:outputLabel for='email' value="Email:"/><br/>
+                <h:inputText class="texteinagbe" value="#{organisationsVerwaltungModel.selectedCharity.email}" id='email'/><br/>
+                <h:message for='email' class='message'/><br/><br/>
+                </div>
+                
+                </div>
+                <div class="buttonsmidle" style="text-align:center"><br/><br/><br/><br/>
+                <h:commandButton class="button" value="Ändern" action="#{organisationsVerwaltungModel.updateCharity}"/>               
+                </div>
+            </h:form>
+        </div>            
+        </div>
+        
+              <div class="unten">
+            <h:form id="fussbalken">
+                
+                <div class="conainterfuss1">
+                    <div class="kontakt">
+                        <h3>Kontakt</h3>
+                        Adresse: Neidenburger Str. 43<br></br><br></br>
+                        Postleitzahl: 45897 Gelsenkirchen<br></br><br></br>
+                        Email: spendensammler@mail.com<br></br><br></br>
+                        Telefon: 029320301202<br></br><br></br><br></br><br></br><br></br>
+                        
+                        Copyright © 2022 Spenden-Almanach<br></br>
+                    </div>
+                    <div class="Support">
+                        <h3>Support</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Support-Portal"></p:link><br></br><br></br>
+                    </div>
+                    <div class="unternehmen">
+                        <h3>Unternehmen</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Über uns"></p:link><br></br><br></br>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Kontakt"></p:link><br></br><br></br>
+                    </div>
+                    <div class="links1">
+                        <h3>Links</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Twitter"></p:link><br></br><br></br>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Youtube"></p:link><br></br><br></br>
+                    </div>
+                </div>
+            </h:form>          
+        </div>
+        
+    </h:body>
+</html>

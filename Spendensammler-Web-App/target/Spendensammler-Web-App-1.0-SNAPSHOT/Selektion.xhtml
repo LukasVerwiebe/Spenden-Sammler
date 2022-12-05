@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Organisationsübersicht</title>
+        <h:outputStylesheet name="style.css" library="css" />
+    </h:head>
+    <h:body>
+        <div class="oben">
+            <h:form id="navbalken">
+
+                <p:growl id="messages"/>
+                <h:graphicImage style ="margin-left:15px" class ="image" value = "/images/spendenlogo.PNG"/>
+                <div class="navBox">
+
+                    <p:menubar>                    
+                        <p:menuitem value="Start" icon="pi pi-fw pi-home" action="/startseite.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+
+                        <p:menuitem value="Organisationen" icon="pi pi-fw pi-heart" action="/Organisationen.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+                        <p:menuitem value="Datenauswertung" icon="pi pi-fw pi-spinner" action="/Datenauswertung.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:divider layout="vertical"/>
+                        <p:menuitem value="|" disabled="true"/>
+
+                        <p:menuitem value="Registrieren" icon="pi pi-fw pi-user-edit" action="/User/register.xhtml?faces-redirect=true" rendered="#{!sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{!sessionData.eingeloggt}" />
+                        <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden').show();" rendered="#{!sessionData.eingeloggt}"/>
+
+                        <p:menuitem value="Einstellungen" icon="pi pi-fw pi-cog" action="#{startseiteModel.einstellungen}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="Logout" icon="pi pi-fw pi-sign-out" action="#{benutzerUpdateModel.logOut}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+
+
+                    </p:menubar>
+
+                    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+                    <p:dialog header="Anmeldung" widgetVar="anmelden" modal="true" resizable="false">
+
+                        <p:panelGrid id="grid" styleClass="">
+                            <p:row>
+                                <p:column>
+                                    <p:outputLabel for='email' value="Emailadresse:"/>
+                                </p:column>
+                                <p:column>        
+                                    <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email'/>
+                                    <p:message for='email' class='message'/>
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column>
+                                    <p:outputLabel for='passwort' value="Passwort:"/>
+                                </p:column>    
+                                <p:column>    
+                                    <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort'/>
+                                    <p:message for='passwort' class='message'/>
+                                </p:column>
+                            </p:row>        
+                            <p:row>
+                                <p:column>    
+                                    <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl"/>
+                                    <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden').hide();" immediate="true" ajax="false"/>
+                                </p:column>
+                            </p:row>
+                        </p:panelGrid>
+                    </p:dialog>
+
+                </div>
+            </h:form>                      
+        </div>
+
+
+        <div class="innen" style ="height:110%;">       
+            <div class = "contentbox3-1" style="text-align:center">
+                <h3>Filter</h3>
+                <h:form>
+
+                    <br/><br/>    
+
+                    <h:outputText value="Weltansicht" /><br/><br/>
+                    <p:selectOneMenu value="#{indexModel.worldview}">
+                        <f:selectItem itemLabel="-auswählen-" itemValue="#{null}" noSelectionOption="true" />
+                        <f:selectItems value="#{indexModel.worldviews}" />
+                    </p:selectOneMenu>
+                    <br/><br/><br/><br/>
+                    <h:outputText value="Land" /><br/><br/>
+                    <p:autoComplete id="acLand" value="#{indexModel.land}"
+                                    completeMethod="#{indexModel.completeTextPlaces}" scrollHeight="250"/>
+                    <br/><br/><br/><br/>
+                    <h:outputText value="Kategorie" /><br/><br/>
+                    <p:autoComplete id="acCategory" value="#{indexModel.category}"
+                                    completeMethod="#{indexModel.completeTextCategories}" scrollHeight="250"/>
+                    <br/><br/><br/><br/>
+
+                    <p:commandButton class="button" value="anwenden" action="#{indexModel.filtern}"/>
+                    <p:commandButton class="button" value="zurücksetzen" action="#{selektionModel.selektionVerlassen}"/>
+
+                </h:form>
+            </div>
+            <div class="contentbox3-2" style ="">
+
+                <h3>gefilterte Organisationen</h3>
+
+                <div>
+                    <h:form id="tabelle">
+                        <p:growl id="msgs" showDetail="true" skipDetailIfEqualsSummary="true"/>
+
+                        <p:dataTable id="checkboxDT" widgetVar="dtWidgetVar" var="charity" value="#{selektionModel.charityList}"
+                                     paginatorTemplate="{CurrentPageReport} {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                     currentPageReportTemplate="(Eintrag: {startRecord} - {endRecord} von {totalRecords}, Seite: {currentPage} von {totalPages})"
+                                     selectionMode="single"
+                                     selection="#{selektionModel.selectedCharity}" rowKey="#{charity.idCharity}"
+                                     style="margin-bottom:0" paginator="true" rows="9" rowsPerPageTemplate="3,6,9"
+                                     selectionPageOnly="false" >
+
+                            <f:facet name="header">
+                                <div class="p-d-flex p-ai-center p-jc-between">
+                                </div>                
+                            </f:facet>
+                            <p:column headerText="Name" sortBy="#{charity.name}" filterBy="#{charity.name}" style="width:1100px; text-align:left; line-height:50%;">
+                                <h:outputText value="#{charity.name}" style="width:900px; text-align:left; line-height: 120%"/>
+                            </p:column>
+
+                            <p:column>
+                                <f:facet name="header"><h:outputText value="Aktion"></h:outputText></f:facet>
+                                <p:commandButton class="buttontabelle" value="Spenden" action="#{spendenModel.spenden(charity)}"/> 
+
+                            </p:column>
+
+                            <f:facet name="footer">
+                                <p:commandButton process="checkboxDT" icon="pi pi-search"
+                                                 value="View" action="#{selektionModel.orgaOeffnen}"/>
+                            </f:facet>
+                        </p:dataTable>
+
+                    </h:form>
+                </div>
+            </div>
+            <div class ="contentbox3-3">
+               <h:form>
+                    <br/><h3 style="margin-left:50px;">Aktuelle Spenden</h3><br/><br/>
+                   
+                        <p:selectOneListbox style="width:280px;line-height:100px;" id="advanced" value="#{spendenAnzeigeModel.quittung}" converter="#{countryConverter}"
+                                            var="q">
+                            <f:selectItems value="#{spendenAnzeigeModel.quittungen}" var="quittung" itemLabel="#{quittung.charity.name}" itemValue="#{quittung}"/>
+                            <p:column style="width:200px ;">
+                                <h:outputText value="#{q.charity.name}"/>
+                            </p:column>
+                            <p:column style="width:75px">
+                                <h:outputText value="#{q.summeQuittung}"/>
+                            </p:column>
+                        </p:selectOneListbox>
+                </h:form>
+            </div>
+        </div>    
+
+
+        <div class="unten">
+            <h:form id="fussbalken">
+
+                <div class="conainterfuss1">
+                    <div class="kontakt">
+                        <h3>Kontakt</h3>
+                        Adresse: Neidenburger Str. 43<br></br><br></br>
+                        Postleitzahl: 45897 Gelsenkirchen<br></br><br></br>
+                        Email: spendensammler@mail.com<br></br><br></br>
+                        Telefon: 029320301202<br></br><br></br><br></br><br></br><br></br>
+
+                        Copyright © 2022 Spenden-Almanach<br></br>
+                    </div>
+                    <div class="Support">
+                        <h3>Support</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Support-Portal"></p:link><br></br><br></br>
+                    </div>
+                    <div class="unternehmen">
+                        <h3>Unternehmen</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Über uns"></p:link><br></br><br></br>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Kontakt"></p:link><br></br><br></br>
+                    </div>
+                    <div class="links1">
+                        <h3>Links</h3>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Twitter"></p:link><br></br><br></br>
+                        <p:link outcome="/startseite.xhtml?faces-redirect=true" value="Youtube"></p:link><br></br><br></br>
+                    </div>
+                </div>
+            </h:form>          
+        </div>
+
+    </h:body>
+</html>
