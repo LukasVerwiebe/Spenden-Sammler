@@ -1,0 +1,110 @@
+Êþº¾   4
+      java/lang/Object <init> ()V  %com/mycompany/services/CharityService
+  	   
+   CharityTest charityService 'Lcom/mycompany/services/CharityService;  #spendensammler/jpa/entities/Charity  BackendTest1  gaw11  website1  
+worldview1  fieldsOfAction1  bericht1
+      p(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V	  " # $ charity1 %Lspendensammler/jpa/entities/Charity; & 0spendensammler/jpa/entities/Charity_Organisation
+ % 	  ) * + chOrga1 2Lspendensammler/jpa/entities/Charity_Organisation;
+  - . / 
+setCh_orga 5(Lspendensammler/jpa/entities/Charity_Organisation;)V
+ % 1 2 3 
+setCharity ((Lspendensammler/jpa/entities/Charity;)V 5 BackendTest2	  7 8 $ charity2	  : ; + chOrga2 = BackendTest3	  ? @ $ charity3	  B C + chOrga3 E BackendTest4	  G H $ charity4	  J K + chOrga4 M 
+CharityFilter O 
+FilterTest	  Q R $ 
+charityFilter	  T U + chOrga5	 W X Y Z [ java/lang/System out Ljava/io/PrintStream; ] 1
+ _ ` a b c java/io/PrintStream println (Ljava/lang/String;)V
+  e f 3 createNewCharity
+  h i j getName ()Ljava/lang/String;
+  l m n findeCharity $(Ljava/lang/String;)Ljava/util/List; p q r s t java/util/List get (I)Ljava/lang/Object;
+ v w x y z org/junit/Assert assertEquals '(Ljava/lang/Object;Ljava/lang/Object;)V
+  | } ~ getIdCharity ()Ljava/lang/Long; € @!Â§$%&/()=?Ã¤Ã¼Ã¶ ‚ website2 „ 	woldview2 † action2 ˆ bericht2       Þ
+ Œ  Ž   java/lang/Long valueOf (J)Ljava/lang/Long;        ” 
+managment2 – strasse2 ˜ stadt2 š plz2 œ 222222 ž 222223   test2@test2.de
+  ¢ £ ¤ 
+updateCharity/(Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/Long;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+  ¦ § j getLogoPath
+  © ª 3 
+removeCharity
+ _ ¬ b ­ (Ljava/lang/Object;)V p ¯ ° ± size ()I
+ v ³ y ´ (JJ)V ¶ bild2ÿÿÿÿÿÿÿ
+  º » ± getFoundingYear      Ï
+  ¿ À j getHomepage
+  Â Ã j getWorldview
+  Å Æ j getFieldsOfAction
+  È É j getAdvertingFinancialInspektion
+  Ë Ì Í 
+getCh_orga 4()Lspendensammler/jpa/entities/Charity_Organisation;
+ % Ï Ð ~ getMembercount
+ Œ Ò Ó j toString Õ 222
+ % × Ø ~ getEmployeecount Ú 22
+ % Ü Ý ~ getVolounteersCount
+ % ß à j getManagmentbody
+ % â ã ± getOrgaYear
+  å æ j 
+getStrasse
+  è é j getStadt
+  ë ì j getPostleitzahl
+  î ï j 
+getTelefon
+  ñ ò j 
+getTelefax
+  ô õ j getEmail ÷ ÿmanagment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2managment2asdfg ù  
+  û ü ý gefilterteCharities H(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/util/List; RuntimeVisibleAnnotations Lorg/mockito/InjectMocks; Code LineNumberTable LocalVariableTable this 
+LCharityTest; setUp "Lorg/junit/jupiter/api/BeforeEach; testCharity1 Lorg/junit/jupiter/api/Test; Lorg/junit/jupiter/api/Order; value    testCharity2    testCharity3    testCharity4    testCharityFilter    
+SourceFile CharityTest.java ,Lorg/junit/jupiter/api/extension/ExtendWith; ,Lorg/mockito/junit/jupiter/MockitoExtension; !          þ     ÿ    # $    8 $    @ $    H $    R $    * +    ; +    C +    K +    U +           /     *· ±                          § 
+   )*» Y· 	µ 
+*» Y· µ !*» %Y· 'µ (*´ !*´ (¶ ,*´ (*´ !¶ 0*» Y4· µ 6*» %Y· 'µ 9*´ 6*´ 9¶ ,*´ 9*´ 6¶ 0*» Y<· µ >*» %Y· 'µ A*´ >*´ A¶ ,*´ A*´ >¶ 0*» YD· µ F*» %Y· 'µ I*´ F*´ I¶ ,*´ I*´ F¶ 0*» YLN· µ P*» %Y· 'µ S*´ P*´ S¶ ,*´ S*´ P¶ 0±      Z    )  + # / . 0 9 1 D 3 \ 7 g 8 r 9 } ; • ?   @ « A ¶ C Î G Ù H ä I ï L P Q R( U      )   þ                  Î² V\¶ ^*´ 
+*´ !¶ d*´ 
+*´ !¶ g¶ k¹ o À ¶ g¸ u*´ 
+*´ !¶ {*´ !¶ gÏƒ…‡ ‰¸ ‹ ‘¸ ‹ ‰¸ ‹“Ï•—™›Ÿ¶ ¡*´ 
+*´ !¶ g¶ k¹ o À ¶ ¥¸ u*´ 
+*´ !¶ ¨² V*´ 
+*´ !¶ g¶ k¶ «*´ 
+*´ !¶ g¶ k¹ ® …	¸ ²±      & 	   ]  ^  _ 2 a w b – d ¡ e µ f Í g       Î   þ      	 
+I        ö     ´*´ 
+*´ 6¶ d*´ 
+*´ 6¶ g¶ k¹ o À ¶ g4¸ u*´ 
+*´ 6¶ {*´ 6¶ gµÏƒ…‡ ·¸ ‹ ‘¸ ‹ ‰¸ ‹“Ï•—™›Ÿ¶ ¡*´ 
+*´ 6¶ g¶ k¹ o À ¶ ¹… ¼¸ ²*´ 
+*´ 6¶ ¨*´ 
+*´ 6¶ g¶ k¹ ® …	¸ ²±          m  n * p o q  s › t ³ v       ´   þ      	 
+I
+       @    ¾*´ 
+*´ >¶ d*´ 
+*´ >¶ g¶ k¹ o À ¶ g<¸ u*´ 
+*´ >¶ {*´ >¶ gµÏƒ…‡ ‰¸ ‹ ‘¸ ‹ ‰¸ ‹“Ï•—™›Ÿ¶ ¡*´ 
+*´ >¶ g¶ k¹ o À ¶ ¥µ¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ ¹… ¼¸ ²*´ 
+*´ >¶ g¶ k¹ o À ¶ ¾¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ Áƒ¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ Ä…¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ Ç‡¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ Ê¶ Î¶ ÑÔ¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ Ê¶ Ö¶ ÑÙ¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ Ê¶ Û¶ ÑÔ¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ Ê¶ Þ“¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ Ê¶ á… ¼¸ ²*´ 
+*´ >¶ g¶ k¹ o À ¶ ä•¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ ç—¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ ê™¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ í›¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ ð¸ u*´ 
+*´ >¶ g¶ k¹ o À ¶ óŸ¸ u*´ 
+*´ >¶ ¨*´ 
+*´ >¶ g¶ k¹ ® …	¸ ²±      ^    |  } *  o € Ž  ¯ ‚ Î ƒ í „ …+ †P ‡u ˆš ‰¼ Šà ‹ÿ Œ = Ž\ { š “¥ ”½ •      ¾   þ      	 
+I        ö     ´*´ 
+*´ F¶ d*´ 
+*´ F¶ g¶ k¹ o À ¶ gD¸ u*´ 
+*´ F¶ {*´ F¶ gµÏƒ…‡ ‰¸ ‹ ‘¸ ‹ ‰¸ ‹öÏ•—™›Ÿ¶ ¡*´ 
+*´ F¶ g¶ k¹ o À ¶ ¹… ¼¸ ²*´ 
+*´ F¶ ¨*´ 
+*´ F¶ g¶ k¹ ® …	¸ ²±          ›  œ * ž o ¡  £ › ¤ ³ ¦       ´   þ      	 
+I        ¨     j*´ 
+*´ P¶ d*´ 
+*´ P¶ g¶ k¹ o À ¶ gL¸ u*´ 
+*´ P¶ Áøø¶ ú¹ ® …
+¸ ²*´ 
+*´ P¶ ¨*´ 
+*´ P¶ g¶ k¹ ® …	¸ ²±          ¬  ­ * ° F ² Q ³ i µ       j   þ      	 
+I     þ     
+[ c
