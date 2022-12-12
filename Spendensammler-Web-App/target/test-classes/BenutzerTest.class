@@ -1,0 +1,48 @@
+Êþº¾   4 »
+      java/lang/Object <init> ()V  "com/mycompany/services/UserService
+  	   
+   BenutzerTest userService $Lcom/mycompany/services/UserService;  $spendensammler/jpa/entities/Benutzer  vorname1  	nachname1  
+email@1.de  	passwort1  Admin
+     ^(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Z)V	    ! " user1 &Lspendensammler/jpa/entities/Benutzer; $ vorname2 & 	nachname2 (   * 	passwort2	  , - " user2 / #spendensammler/jpa/entities/Charity 1 BackendTest1 3 gaw11 5 website1 7 
+worldview1 9 fieldsOfAction1 ; bericht1
+ . =  > p(Ljava/lang/String;Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V	  @ A B charity1 %Lspendensammler/jpa/entities/Charity; D $spendensammler/jpa/entities/Quittung F text1
+ C H  I (DLjava/lang/String;)V	  K L M 	quittung1 &Lspendensammler/jpa/entities/Quittung;	 O P Q R S java/lang/System out Ljava/io/PrintStream; U 1
+ W X Y Z [ java/io/PrintStream println (Ljava/lang/String;)V ] stadt1 _ stadt2
+  a b c 
+createNewUser M(Lspendensammler/jpa/entities/Benutzer;Ljava/lang/String;Ljava/lang/String;)V
+  e f g getEmailBenutzer ()Ljava/lang/String;
+  i j k 
+findeBenutzer $(Ljava/lang/String;)Ljava/util/List; m n o p q java/util/List get (I)Ljava/lang/Object;
+ s t u v w org/junit/Assert assertEquals '(Ljava/lang/Object;Ljava/lang/Object;)V
+  y z { 
+removeUser )(Lspendensammler/jpa/entities/Benutzer;)V m } ~  size ()I
+ s  v ‚ (JJ)V „ 2
+  † ‡ ˆ 
+getIdBenutzer ()Ljava/lang/Long; Š Timo
+  Œ  g getNachname
+    g getPasswort
+  ’ “ g getRolleBenutzer
+  • – — getStatusBenutzer ()Z
+  ™ š g getStadt
+  œ  g 
+getStrasse
+  Ÿ    getPostleitzahl
+  ¢ £ ¤ 
+updateUser “(Ljava/lang/Long;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/lang/String;Ljava/lang/String;I)V
+  ¦ § g 
+getVorname RuntimeVisibleAnnotations Lorg/mockito/InjectMocks; Code LineNumberTable LocalVariableTable this LBenutzerTest; setUp "Lorg/junit/jupiter/api/BeforeEach; testCreateBenutzer1 Lorg/junit/jupiter/api/Test; testUpdateBenutzer2 testCreateQuittung1 
+testDiagramm1 
+SourceFile BenutzerTest.java ,Lorg/junit/jupiter/api/extension/ExtendWith; value ,Lorg/mockito/junit/jupiter/MockitoExtension; !          ¨     ©    ! "    - "    A B    L M        ª   /     *· ±    «        ¬        ­ ®     ¯   ª   œ 
+    ^*» Y· 	µ 
+*» Y· µ *» Y#%')· µ +*» .Y02468:· <µ ?*» CYE· Gµ J±    «          " ! ' 7 * O . ] 1 ¬       ^ ­ ®   ¨     °     ±   ª   ˜     Z² NT¶ V*´ 
+*´ \^¶ `*´ 
+*´ ¶ d¶ h¹ l À ¶ d¸ r*´ 
+*´ ¶ x*´ 
+*´ ¶ d¶ h¹ | …	¸ €±    «       5  6  7 6 9 A : Y ; ¬       Z ­ ®   ¨     ²     ³   ª  +     á² Nƒ¶ V*´ 
+*´ +\^¶ `*´ 
+*´ +¶ d¶ h¹ l À ¶ d'¸ r*´ 
+*´ +¶ …‰*´ +¶ ‹*´ +¶ d*´ +¶ Ž*´ +¶ ‘*´ +¶ ”*´ +¶ ˜*´ +¶ ›*´ +¶ ž¶ ¡² N*´ 
+*´ +¶ d¶ h¹ l À ¶ ¥¶ V*´ 
+*´ +¶ d¶ h¹ l À ¶ ¥‰¸ r*´ 
+*´ +¶ x*´ 
+*´ +¶ d¶ h¹ | …	¸ €±    «   & 	   ?  @  A 6 C ~ D ž E ½ G È H à I ¬       á ­ ®   ¨     ²     ´   ª   +      ±    «       Y ¬        ­ ®   ¨     ²     µ   ª   +      ±    «       h ¬        ­ ®   ¨     ²    ¶    · ¨     ¸  ¹[ c º
