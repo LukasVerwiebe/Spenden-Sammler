@@ -20,7 +20,6 @@ import java.util.List;
 import java.util.Map;
 import org.primefaces.model.SortMeta;
 import org.primefaces.model.SortOrder;
-import spendensammler.jpa.dao.Datenzugriffsobjekt;
 import spendensammler.jpa.entities.Charity;
 import spendensammler.jpa.entities.Einkommen;
 import spendensammler.jpa.entities.Kategorie;

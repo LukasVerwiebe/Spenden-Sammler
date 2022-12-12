@@ -10,7 +10,6 @@ import jakarta.inject.Named;
 import java.io.Serializable;
 import java.util.Arrays;
 import java.util.List;
-import spendensammler.jpa.dao.Datenzugriffsobjekt;
 import spendensammler.jpa.entities.Benutzer;
 import spendensammler.jpa.entities.Charity;
 import spendensammler.jpa.entities.Charity_Organisation;
