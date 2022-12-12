@@ -74,7 +74,7 @@ public class BenutzerTest {
     
     @Test
     void testCreateQuittung1() {
-        /*userService.createNewQuittung(quittung1);
+        userService.createNewQuittung(quittung1);
         
         assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), quittung1.getTextQuittung());
         
@@ -84,13 +84,13 @@ public class BenutzerTest {
         int listGroesse = userService.findAllQuittungen().size();
         userService.removeQuittung(quittung1);
         assertEquals(listGroesse - 1, userService.findAllQuittungen().size());
-        */
+        
         
     }
     
     @Test
     void testDiagramm1() {
-        /*int listGroesse1 = userService.diagrammQuittungen(2022).size();
+        int listGroesse1 = userService.diagrammQuittungen(2022).size();
         
         userService.createNewQuittung(quittung1);
         assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), quittung1.getTextQuittung());
@@ -100,7 +100,7 @@ public class BenutzerTest {
         userService.removeQuittung(quittung1);
         assertEquals(listGroesse - 1, userService.findAllQuittungen().size());
         
-        */
+        
     }
 
 }    
