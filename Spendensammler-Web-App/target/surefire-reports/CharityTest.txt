@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: CharityTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.375 s - in CharityTest
+Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.781 s - in CharityTest
