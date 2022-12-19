@@ -31,30 +31,30 @@ import spendensammler.jpa.entities.Quittung;
  */
 @ApplicationScoped
 // Postgres Datenbank:
-//@DataSourceDefinition(name = "java:app/jdbc/idb_ds", 
-//        minPoolSize = 0,
-//        initialPoolSize = 0,
-//        className = "org.postgresql.Driver.ClientDataSource",
-//        transactional = false,
-//        portNumber = 1527,
-//        serverName = "172.16.178.31",
-//        user = "spenden",
-//        password = "admin",
-//        databaseName = "Spendensammler"
-//)
-
-// Lokale Datenbank:
 @DataSourceDefinition(name = "java:app/jdbc/idb_ds", 
         minPoolSize = 0,
         initialPoolSize = 0,
-        className = "org.apache.derby.jdbc.ClientDataSource",
+        className = "org.postgresql.Driver.ClientDataSource",
         transactional = false,
         portNumber = 1527,
-        serverName = "localhost",
-        user = "app",
-        password = "app",
-        databaseName = "Spenden"
+        serverName = "localhost",//"172.16.178.31",
+        user = "spenden",
+        password = "admin",
+        databaseName = "Spendensammler"
 )
+
+// Lokale Datenbank:
+//@DataSourceDefinition(name = "java:app/jdbc/idb_ds", 
+//        minPoolSize = 0,
+//        initialPoolSize = 0,
+//        className = "org.apache.derby.jdbc.ClientDataSource",
+//        transactional = false,
+//        portNumber = 1527,
+//        serverName = "localhost",
+//        user = "app",
+//        password = "app",
+//        databaseName = "Spenden"
+//)
 
 public class UserService {
     
