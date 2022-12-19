@@ -8,6 +8,7 @@ import jakarta.annotation.PostConstruct;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.inject.Inject;
 import jakarta.inject.Named;
+import java.sql.Date;
 import java.util.List;
 import spendensammler.jpa.entities.Bankkonto;
 import spendensammler.jpa.entities.Benutzer;
@@ -60,6 +61,18 @@ public class UserController {
             quittung.setCharity(charity);
             quittung.setBenutzer(benutzer);
             userService.createNewQuittung(quittung);            
+        } catch(Exception e) {
+            System.out.println(e);
+        }
+    }
+    
+    public void newQuittungDate(double summe, String text, Charity charity, Benutzer benutzer, Date heutigesDatum) {
+        try { 
+            Quittung quittung = new Quittung(summe, text);
+            // Verbindungen:
+            quittung.setCharity(charity);
+            quittung.setBenutzer(benutzer);
+            userService.createNewQuittungDate(quittung, heutigesDatum);            
         } catch(Exception e) {
             System.out.println(e);
         }

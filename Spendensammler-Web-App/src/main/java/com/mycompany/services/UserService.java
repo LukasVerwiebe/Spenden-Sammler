@@ -104,6 +104,17 @@ public class UserService {
         }
     }
     
+    public void createNewQuittungDate(Quittung quittung, Date datum) {
+        try {
+            em.getTransaction().begin();
+            quittung.setErstelldatum(datum);   
+            em.persist(quittung);
+            em.getTransaction().commit();
+        } catch(ConstraintViolationException cve) {
+            System.out.println("Fehler Datenzugriff Quittung");
+        }
+    }
+    
     public void createNewQuittung(Quittung quittung) {
         try {
             em.getTransaction().begin();
@@ -216,6 +227,12 @@ public class UserService {
     
     public List<Benutzer> findeBenutzer(String emailBenutzer){
             Query query = em.createQuery("SELECT b FROM Benutzer b WHERE b.emailBenutzer LIKE " + "'" + emailBenutzer + "'");
+            List<Benutzer> benutzer = query.getResultList();
+            return benutzer;
+    }
+    
+    public List<Benutzer> findUser(int id){
+            Query query = em.createQuery("SELECT b FROM Benutzer b WHERE b.id = " + id);
             List<Benutzer> benutzer = query.getResultList();
             return benutzer;
     }

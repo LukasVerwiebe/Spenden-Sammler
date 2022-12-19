@@ -22,30 +22,30 @@ import spendensammler.jpa.entities.Quittung;
 // deployt ist.
 @ApplicationScoped
 // Postgres Datenbank:
-//@DataSourceDefinition(name = "java:app/jdbc/idb_ds", 
-//        minPoolSize = 0,
-//        initialPoolSize = 0,
-//        className = "org.postgresql.Driver.ClientDataSource",
-//        transactional = false,
-//        portNumber = 1527,
-//        serverName = "172.16.178.31",
-//        user = "spenden",
-//        password = "admin",
-//        databaseName = "Spendensammler"
-//)
-
-// Lokale Datenbank:
 @DataSourceDefinition(name = "java:app/jdbc/idb_ds", 
         minPoolSize = 0,
         initialPoolSize = 0,
-        className = "org.apache.derby.jdbc.ClientDataSource",
+        className = "org.postgresql.Driver.ClientDataSource",
         transactional = false,
         portNumber = 1527,
-        serverName = "localhost",
-        user = "app",
-        password = "app",
-        databaseName = "Spenden"
+        serverName = "172.16.178.31",
+        user = "spenden",
+        password = "admin",
+        databaseName = "Spendensammler"
 )
+
+// Lokale Datenbank:
+//@DataSourceDefinition(name = "java:app/jdbc/idb_ds", 
+//        minPoolSize = 0,
+//        initialPoolSize = 0,
+//        className = "org.apache.derby.jdbc.ClientDataSource",
+//        transactional = false,
+//        portNumber = 1527,
+//        serverName = "localhost",
+//        user = "app",
+//        password = "app",
+//        databaseName = "Spenden"
+//)
 
 public class CharityService {
     
@@ -217,6 +217,12 @@ public class CharityService {
         List<Charity> charitys = query.getResultList();
         return charitys;
     }  
+    
+    public List<Charity> findCharity(int id){
+        Query query = em.createQuery("SELECT c FROM Charity c WHERE c.id = " + id);
+        List<Charity> charitys = query.getResultList();
+        return charitys;
+    }
 
     public List<Charity> gefilterteCharities(String worldview, String land, String category) {
         List<Charity> charitys;
