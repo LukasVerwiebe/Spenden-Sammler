@@ -549,4 +549,16 @@ public class AdminImportModel implements Serializable{
         }
     } 
     
+    private String iban = "DE89370400440532013000";
+    private String inhaber = "Westfälische Hochschule";
+    
+    public void bankkontoImport() {
+        //int num = 0;
+        for(int i = 0; i < orgaid.length; i++) {            
+            List<Charity> charity = charityService.findCharity(orgaid[i]); 
+            //userController.newBAnkkontoOrga(iban, inhaber);
+            //charityController.newPlaceOfAction(charity.get(0));   
+        }
+    }
+    
 }

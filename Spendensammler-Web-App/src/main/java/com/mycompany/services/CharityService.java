@@ -28,7 +28,7 @@ import spendensammler.jpa.entities.Quittung;
         className = "org.postgresql.Driver.ClientDataSource",
         transactional = false,
         portNumber = 1527,
-        serverName = "localhost",//"172.16.178.31",
+        serverName = "172.16.178.31",
         user = "spenden",
         password = "admin",
         databaseName = "Spendensammler"
