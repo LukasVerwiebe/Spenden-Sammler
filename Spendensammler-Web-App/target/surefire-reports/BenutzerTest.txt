@@ -1,4 +1,44 @@
 -------------------------------------------------------------------------------
 Test set: BenutzerTest
 -------------------------------------------------------------------------------
-Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.45 s - in BenutzerTest
+Tests run: 4, Failures: 0, Errors: 4, Skipped: 0, Time elapsed: 2.397 s <<< FAILURE! - in BenutzerTest
+testUpdateBenutzer2  Time elapsed: 2.06 s  <<< ERROR!
+org.mockito.exceptions.misusing.InjectMocksException: 
+
+Cannot instantiate @InjectMocks field named 'userService' of type 'class com.mycompany.services.UserService'.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+However the constructor or the initialization block threw an exception : Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+
+testCreateBenutzer1  Time elapsed: 0.085 s  <<< ERROR!
+org.mockito.exceptions.misusing.InjectMocksException: 
+
+Cannot instantiate @InjectMocks field named 'userService' of type 'class com.mycompany.services.UserService'.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+However the constructor or the initialization block threw an exception : Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+
+testCreateQuittung1  Time elapsed: 0.102 s  <<< ERROR!
+org.mockito.exceptions.misusing.InjectMocksException: 
+
+Cannot instantiate @InjectMocks field named 'userService' of type 'class com.mycompany.services.UserService'.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+However the constructor or the initialization block threw an exception : Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+
+testDiagramm1  Time elapsed: 0.12 s  <<< ERROR!
+org.mockito.exceptions.misusing.InjectMocksException: 
+
+Cannot instantiate @InjectMocks field named 'userService' of type 'class com.mycompany.services.UserService'.
+You haven't provided the instance at field declaration so I tried to construct the instance.
+However the constructor or the initialization block threw an exception : Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+
+Caused by: org.hibernate.service.spi.ServiceException: Unable to create requested service [org.hibernate.engine.jdbc.env.spi.JdbcEnvironment]
+Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo cannot be null when 'hibernate.dialect' not set
+
