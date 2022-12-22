@@ -22,8 +22,8 @@
              * Instead use one of the strategies described in
              * https://stripe.com/docs/payments/checkout/fulfill-orders
              */
-            successUrl: 'http://localhost:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
-            cancelUrl: 'http://localhost:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
+            successUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
+            cancelUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
         })
                 .then(function (result) {
                     if (result.error) {
@@ -51,8 +51,8 @@
              * Instead use one of the strategies described in
              * https://stripe.com/docs/payments/checkout/fulfill-orders
              */
-            successUrl: 'http://localhost:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
-            cancelUrl: 'http://localhost:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
+            successUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
+            cancelUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
         })
                 .then(function (result) {
                     if (result.error) {
@@ -80,8 +80,8 @@
              * Instead use one of the strategies described in
              * https://stripe.com/docs/payments/checkout/fulfill-orders
              */
-            successUrl: 'http://localhost:8080/Spendensammler-Web-App/',
-            cancelUrl: 'http://localhost:8080/Spendensammler-Web-App/',
+            successUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
+            cancelUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
         })
                 .then(function (result) {
                     if (result.error) {
@@ -109,8 +109,8 @@
              * Instead use one of the strategies described in
              * https://stripe.com/docs/payments/checkout/fulfill-orders
              */
-            successUrl: 'http://localhost:8080/Spendensammler-Web-App/',
-            cancelUrl: 'http://localhost:8080/Spendensammler-Web-App/',
+            successUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
+            cancelUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
         })
                 .then(function (result) {
                     if (result.error) {
@@ -138,8 +138,8 @@
              * Instead use one of the strategies described in
              * https://stripe.com/docs/payments/checkout/fulfill-orders
              */
-            successUrl: 'http://localhost:8080/Spendensammler-Web-App/',
-            cancelUrl: 'http://localhost:8080/Spendensammler-Web-App/',
+            successUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
+            cancelUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
         })
                 .then(function (result) {
                     if (result.error) {
@@ -167,8 +167,8 @@
              * Instead use one of the strategies described in
              * https://stripe.com/docs/payments/checkout/fulfill-orders
              */
-            successUrl: 'http://localhost:8080/Spendensammler-Web-App/',
-            cancelUrl: 'http://localhost:8080/Spendensammler-Web-App/',
+            successUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
+            cancelUrl: 'http://172.16.178.31:8080/Spendensammler-Web-App/faces/User/SpendenDanke.xhtml',
         })
                 .then(function (result) {
                     if (result.error) {
