@@ -45,7 +45,7 @@ public class SpendenAnzeigeModel implements Serializable {
         List<Quittung> quittungNormal = charityController.getQuittungen();        
         List<Quittung> quittungGedreht = new ArrayList<Quittung>();
         int zaehler = quittungNormal.size() -1;
-        for(int i = 0; i <= 4; i++) {
+        for(int i = 0; i <= 1; i++) {
             quittungGedreht.add(quittungNormal.get(zaehler));
             zaehler = zaehler - 1;
         }        

@@ -46,6 +46,11 @@
     
     <dependencies>
         <dependency>
+    <groupId>org.webjars.npm</groupId>
+    <artifactId>xmlhttprequest</artifactId>
+    <version>1.8.0</version>
+</dependency>
+        <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
             <version>${jakartaee}</version>
@@ -82,7 +87,7 @@
             <version>9.1-901-1.jdbc4</version>
             <type>jar</type>
         </dependency>
-        <!--<dependency>
+<!--        <dependency>
             <groupId>spendensammler.entities</groupId>
             <artifactId>Spendensammler.JPA.Entities</artifactId>
             <version>1.0-SNAPSHOT</version>
@@ -167,9 +172,13 @@
             <version>4.13.2</version>
             <scope>test</scope>
         </dependency>
+        
         <!-- Selenium -->
-        
-        
+        <dependency>
+            <groupId>org.webjars.npm</groupId>
+            <artifactId>primeflex</artifactId>
+            <version>3.2.0</version>
+        </dependency>
     </dependencies>
     
     <build>

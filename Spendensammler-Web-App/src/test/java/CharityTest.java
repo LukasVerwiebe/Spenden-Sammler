@@ -1,4 +1,4 @@
-
+/**
 import com.mycompany.services.CharityService;
 import static org.junit.Assert.*;
 import org.junit.jupiter.api.BeforeEach;
@@ -181,3 +181,4 @@ public class CharityTest {
     }
 
 }
+**/

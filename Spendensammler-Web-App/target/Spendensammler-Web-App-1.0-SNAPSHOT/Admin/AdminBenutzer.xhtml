@@ -12,26 +12,21 @@
         <h:outputStylesheet name="style.css" library="css" />
     </h:head>
     <h:body>        
-       <div class="oben">
-            <h:form id="navbalken">
-
-                <p:growl id="messages"/>
-                <h:graphicImage style ="margin-left:15px" class ="image" value = "/images/spendenlogo.PNG"/>
-                <div class="navBox">
-
+        <div class="oben">
+            <h:form>
+                <p:growl id="messages3"/>
+                <div class ="navBoxalt2">
                     <p:menubar>                    
                         <p:menuitem value="Start" icon="pi pi-fw pi-home" action="/startseite.xhtml?faces-redirect=true" ajax="false"/>
                         <p:menuitem value="|" disabled="true"/>
                          
                         <p:menuitem value="Organisationen" icon="pi pi-fw pi-heart" action="/Organisationen.xhtml?faces-redirect=true" ajax="false"/>
                         <p:menuitem value="|" disabled="true"/>
-                        <p:menuitem value="Datenauswertung" icon="pi pi-fw pi-spinner" action="/Datenauswertung.xhtml?faces-redirect=true" ajax="false"/>
                         <p:divider layout="vertical"/>
-                        <p:menuitem value="|" disabled="true"/>
                         
                         <p:menuitem value="Registrieren" icon="pi pi-fw pi-user-edit" action="/User/register.xhtml?faces-redirect=true" rendered="#{!sessionData.eingeloggt}" ajax="false"/>
                         <p:menuitem value="|" disabled="true" rendered="#{!sessionData.eingeloggt}" />
-                        <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden').show();" rendered="#{!sessionData.eingeloggt}"/>
+                        <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden3').show();" rendered="#{!sessionData.eingeloggt}"/>
                         
                         <p:menuitem value="Einstellungen" icon="pi pi-fw pi-cog" action="#{startseiteModel.einstellungen}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
                         <p:menuitem value="|" disabled="true" rendered="#{sessionData.eingeloggt}" ajax="false"/>
@@ -39,41 +34,170 @@
 
 
                     </p:menubar>
+                     <p:growl id="growl3" sticky="true" showDetail="true" life="3000" />
+                    <p:dialog   header="Anmeldung" widgetVar="anmelden3" modal="true" resizable="false">
 
-                    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
-                    <p:dialog header="Anmeldung" widgetVar="anmelden" modal="true" resizable="false">
+                                                <p:panelGrid id="grid" styleClass="">
+                                                    <p:row style="height:70px">
+                                                        <p:column style="width:200px">
+                                                            <p:outputLabel for='email3' value="Emailadresse:"/>
+                                                        </p:column>
+                                                        <p:column width ="400px">        
+                                                            <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email3'/>
+                                                            <p:message for='email3' class='message'/>
+                                                        </p:column>
+                                                    </p:row>
+                                                    <p:row style="height:70px">
+                                                        <p:column>
+                                                            <p:outputLabel for='passwort3' value="Passwort:"/>
+                                                        </p:column>    
+                                                        <p:column>    
+                                                            <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort3'/>
+                                                            <p:message for='passwort3' class='message'/>
+                                                        </p:column>
+                                                    </p:row>        
+                                                    <p:row style="height:60px">
+                                                        <p:column>    
+                                                            <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl3"/>
+                                                            </p:column>
+                                                        <p:column> 
+                                                            <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden3').hide();" immediate="true" ajax="false"/>
+                                                        </p:column>
+                                                    </p:row>
+                                                </p:panelGrid>
+                                            </p:dialog>
+                </div> 
+            </h:form>
+            <h:form>
 
-                        <p:panelGrid id="grid" styleClass="">
-                            <p:row>
-                                <p:column>
-                                    <p:outputLabel for='email' value="Emailadresse:"/>
-                                </p:column>
-                                <p:column>        
-                                    <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email'/>
-                                    <p:message for='email' class='message'/>
-                                </p:column>
-                            </p:row>
-                            <p:row>
-                                <p:column>
-                                    <p:outputLabel for='passwort' value="Passwort:"/>
-                                </p:column>    
-                                <p:column>    
-                                    <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort'/>
-                                    <p:message for='passwort' class='message'/>
-                                </p:column>
-                            </p:row>        
-                            <p:row>
-                                <p:column>    
-                                    <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl"/>
-                                    <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden').hide();" immediate="true" ajax="false"/>
-                                </p:column>
-                            </p:row>
-                        </p:panelGrid>
-                    </p:dialog>
+                 
+                
+                <p:growl id="messages2"/>
 
-                </div>
-            </h:form>                      
-        </div>
+
+
+
+
+                <div class="navBoxalt">
+
+                    <p:menubar>                    
+                        <p:menuitem value="Start" icon="pi pi-fw pi-home" action="/startseite.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+
+                        <p:menuitem value="Organisationen" icon="pi pi-fw pi-heart" action="/Organisationen.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+
+                        <p:divider layout="vertical"/>
+
+                        <p:menuitem value="Registrieren" icon="pi pi-fw pi-user-edit" action="/User/register.xhtml?faces-redirect=true" rendered="#{!sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{!sessionData.eingeloggt}" />
+                        <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden2').show();" rendered="#{!sessionData.eingeloggt}"/>
+
+                        <p:menuitem value="Einstellungen" icon="pi pi-fw pi-cog" action="#{startseiteModel.einstellungen}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="Logout" icon="pi pi-fw pi-sign-out" action="#{benutzerUpdateModel.logOut}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+
+
+                    </p:menubar>
+                    
+
+                    <p:growl id="growl2" sticky="true" showDetail="true" life="3000" />
+                    <p:dialog style="line-height: 50px" height ="350px" resizable="false" header="Anmeldung" widgetVar="anmelden2" modal="true">
+
+                        <p:panelGrid id="grid2" styleClass="" style="">
+                            
+                                
+                                <p:row style="height:100px;">
+
+                                    <p:outputLabel for='email2' value="Emailadresse:"/>
+                                </p:row>
+                                <p:row>
+                                    <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email2'/>
+                                </p:row>
+                                <p:message for='email2' class='message'/>
+
+                                <p:row>
+                                    <p:outputLabel for='passwort2' value="Passwort:"/>
+                                </p:row>
+                                <p:row>
+                                    <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort2'/>
+                                </p:row>
+                                <p:message for='passwort2' class='message'/>
+
+
+                                <p:row>
+                                       
+                                    <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl2"/>
+                                     <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden2').hide();" immediate="true" ajax="false"/>
+                                </p:row>
+                                
+                                    </p:panelGrid>
+                                    </p:dialog>
+
+                                    </div>
+
+                                    </h:form>  
+                                    <h:form id="navbalken">
+
+                                        <p:growl id="messages"/>
+                                        <h:graphicImage style ="margin-left:1.5vh" class ="image" value = "/images/spendenlogo.PNG"/>
+                                        <div class="navBox">
+
+                                            <p:menubar>                    
+                                                <p:menuitem value="Start" icon="pi pi-fw pi-home" action="/startseite.xhtml?faces-redirect=true" ajax="false"/>
+                                                <p:menuitem value="|" disabled="true"/>
+
+                                                <p:menuitem value="Organisationen" icon="pi pi-fw pi-heart" action="/Organisationen.xhtml?faces-redirect=true" ajax="false"/>
+                                                <p:menuitem value="|" disabled="true"/>
+                                                <p:menuitem value="Datenauswertung" icon="pi pi-fw pi-spinner" action="/Datenauswertung.xhtml?faces-redirect=true" ajax="false"/>
+                                                <p:divider layout="vertical"/>
+                                                <p:menuitem value="|" disabled="true"/>
+
+                                                <p:menuitem value="Registrieren" icon="pi pi-fw pi-user-edit" action="/User/register.xhtml?faces-redirect=true" rendered="#{!sessionData.eingeloggt}" ajax="false"/>
+                                                <p:menuitem value="|" disabled="true" rendered="#{!sessionData.eingeloggt}" />
+                                                <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden').show();" rendered="#{!sessionData.eingeloggt}"/>
+
+                                                <p:menuitem value="Einstellungen" icon="pi pi-fw pi-cog" action="#{startseiteModel.einstellungen}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                                                <p:menuitem value="|" disabled="true" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                                                <p:menuitem value="Logout" icon="pi pi-fw pi-sign-out" action="#{benutzerUpdateModel.logOut}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+
+
+                                            </p:menubar>
+
+                                            <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+                                            <p:dialog   header="Anmeldung" widgetVar="anmelden" modal="true" resizable="false">
+
+                                                <p:panelGrid id="grid" styleClass="">
+                                                    <p:row>
+                                                        <p:column>
+                                                            <p:outputLabel for='email' value="Emailadresse:"/>
+                                                        </p:column>
+                                                        <p:column>        
+                                                            <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email'/>
+                                                            <p:message for='email' class='message'/>
+                                                        </p:column>
+                                                    </p:row>
+                                                    <p:row>
+                                                        <p:column>
+                                                            <p:outputLabel for='passwort' value="Passwort:"/>
+                                                        </p:column>    
+                                                        <p:column>    
+                                                            <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort'/>
+                                                            <p:message for='passwort' class='message'/>
+                                                        </p:column>
+                                                    </p:row>        
+                                                    <p:row>
+                                                        <p:column>    
+                                                            <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl"/>
+                                                            <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden').hide();" immediate="true" ajax="false"/>
+                                                        </p:column>
+                                                    </p:row>
+                                                </p:panelGrid>
+                                            </p:dialog>
+
+                                        </div>
+                                    </h:form>                      
+                                    </div>
         
         <div class="innen">
             
@@ -114,44 +238,44 @@
             
             <f:facet name="header">
                 <div class="p-d-flex p-ai-center p-jc-between">
-                    <p:inputText id="globalFilter" onkeyup="PF('dtWidgetVar').filter()" style="width:20rem" placeholder="Geben Sie einen Wert ein" />&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p:inputText id="globalFilter" onkeyup="PF('dtWidgetVar').filter()" style="width:2vh" placeholder="Geben Sie einen Wert ein" />&nbsp;&nbsp;&nbsp;&nbsp;
                     <p:commandButton id="toggler" type="button" value="Spalten" icon="pi pi-align-justify"/>
                     <p:columnToggler datasource="checkboxDT" trigger="toggler"/>
                 </div>                
             </f:facet>
             
                    
-             <p:column headerText="*" selectionMode="multiple" style="width:50px;text-align:center"/>
-            <p:column headerText="ID" sortBy="#{benutzer.idBenutzer}" filterBy="#{benutzer.idBenutzer}" style="width:100px; text-align:center">
+             <p:column headerText="*" selectionMode="multiple" style="width:5vh;text-align:center"/>
+            <p:column headerText="ID" sortBy="#{benutzer.idBenutzer}" filterBy="#{benutzer.idBenutzer}" style="width:10vh; text-align:center">
                 <h:outputText value="#{benutzer.idBenutzer}" />
             </p:column>
             
-            <p:column headerText="Vorname" sortBy="#{benutzer.vorname}" filterBy="#{benutzer.vorname}" style="width:300px; text-align:left">
-                <h:outputText value="#{benutzer.vorname}" style="width:300px; text-align:left; line-height: 120%"/>
+            <p:column headerText="Vorname" sortBy="#{benutzer.vorname}" filterBy="#{benutzer.vorname}" style="width:30vh; text-align:left">
+                <h:outputText value="#{benutzer.vorname}" style="width:30vh; text-align:left; line-height: 120%"/>
             </p:column>
             
-            <p:column headerText="Nachname" sortBy="#{benutzer.nachname}" filterBy="#{benutzer.nachname}" style="width:300px; text-align:left">
-                <h:outputText value="#{benutzer.nachname}" style="width:300px; text-align:left; line-height: 120%"/>
+            <p:column headerText="Nachname" sortBy="#{benutzer.nachname}" filterBy="#{benutzer.nachname}" style="width:30vh; text-align:left">
+                <h:outputText value="#{benutzer.nachname}" style="width:30vh; text-align:left; line-height: 120%"/>
             </p:column>
             
-            <p:column headerText="Email" sortBy="#{benutzer.emailBenutzer}" filterBy="#{benutzer.emailBenutzer}" style="width:300px; text-align:left">
+            <p:column headerText="Email" sortBy="#{benutzer.emailBenutzer}" filterBy="#{benutzer.emailBenutzer}" style="width:30vh; text-align:left">
                 <h:outputText value="#{benutzer.emailBenutzer}" style="width:300px; text-align:left; line-height: 120%"/>
             </p:column>
             
             <p:column headerText="Strasse" sortBy="#{benutzer.strasse}" filterBy="#{benutzer.strasse}" style="width:300px; text-align:left">
-                <h:outputText value="#{benutzer.strasse}" style="width:300px; text-align:left; line-height: 120%"/>
+                <h:outputText value="#{benutzer.strasse}" style="width:30vh; text-align:left; line-height: 120%"/>
             </p:column>
             
-            <p:column headerText="Stadt" sortBy="#{benutzer.stadt}" filterBy="#{benutzer.stadt}" style="width:300px; text-align:left">
+            <p:column headerText="Stadt" sortBy="#{benutzer.stadt}" filterBy="#{benutzer.stadt}" style="width:30vh; text-align:left">
                 <h:outputText value="#{benutzer.stadt}" style="width:300px; text-align:left; line-height: 120%"/>
             </p:column>
             
-            <p:column headerText="Postleitzehal" sortBy="#{benutzer.postleitzahl}" filterBy="#{benutzer.postleitzahl}" style="width:300px; text-align:left" visible="false">
-                <h:outputText value="#{benutzer.postleitzahl}" style="width:300px; text-align:left; line-height: 120%"/>
+            <p:column headerText="Postleitzehal" sortBy="#{benutzer.postleitzahl}" filterBy="#{benutzer.postleitzahl}" style="width:30vh; text-align:left" visible="false">
+                <h:outputText value="#{benutzer.postleitzahl}" style="width:30vh; text-align:left; line-height: 120%"/>
             </p:column>
                         
                        
-            <p:column style="width:200px">
+            <p:column style="width:20vh">
                 <f:facet name="header">
                     <h:outputText value="Aktion"></h:outputText>
                 </f:facet>

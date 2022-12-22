@@ -1,4 +1,4 @@
-import com.mycompany.services.CharityService;
+/**import com.mycompany.services.CharityService;
 import com.mycompany.services.UserService;
 import org.hibernate.engine.jdbc.spi.SqlExceptionHelper;
 import static org.junit.Assert.*;
@@ -74,35 +74,35 @@ public class BenutzerTest {
     
     @Test
     void testCreateQuittung1() {
-//        userService.createNewQuittung(quittung1);
-//        
-//        assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), quittung1.getTextQuittung());
-//        
-//        userService.updateQuittung(quittung1.getIdQuittung(), 1.00, "textUpdate");
-//        assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), "textUpdate");
-//        
-//        int listGroesse = userService.findAllQuittungen().size();
-//        userService.removeQuittung(quittung1);
-//        assertEquals(listGroesse - 1, userService.findAllQuittungen().size());
+        userService.createNewQuittung(quittung1);
+        
+        assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), quittung1.getTextQuittung());
+        
+        userService.updateQuittung(quittung1.getIdQuittung(), 1.00, "textUpdate");
+        assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), "textUpdate");
+        
+        int listGroesse = userService.findAllQuittungen().size();
+        userService.removeQuittung(quittung1);
+        assertEquals(listGroesse - 1, userService.findAllQuittungen().size());
         
         
     }
     
     @Test
     void testDiagramm1() {
-//        int listGroesse1 = userService.diagrammQuittungen(2022).size();
-//        
-//        userService.createNewQuittung(quittung1);
-//        assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), quittung1.getTextQuittung());
-//        assertEquals(userService.diagrammQuittungen(2022).size(), listGroesse1 + 1);
-//                
-//        int listGroesse = userService.findAllQuittungen().size();
-//        userService.removeQuittung(quittung1);
-//        assertEquals(listGroesse - 1, userService.findAllQuittungen().size());
+        int listGroesse1 = userService.diagrammQuittungen(2022).size();
+        
+        userService.createNewQuittung(quittung1);
+        assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), quittung1.getTextQuittung());
+        assertEquals(userService.diagrammQuittungen(2022).size(), listGroesse1 + 1);
+                
+        int listGroesse = userService.findAllQuittungen().size();
+        userService.removeQuittung(quittung1);
+        assertEquals(listGroesse - 1, userService.findAllQuittungen().size());
         
         
     }
 
 }    
-    
+    **/
     

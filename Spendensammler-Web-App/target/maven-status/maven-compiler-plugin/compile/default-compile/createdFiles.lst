@@ -1,0 +1,14 @@
+com\mycompany\model\SessionData.class
+com\mycompany\model\SpendenModel.class
+com\mycompany\model\SelektionModel.class
+com\mycompany\model\AdminQuittungUpdateModel.class
+com\mycompany\model\BenutzerBearbeitenAdminModel.class
+com\mycompany\model\OrgaEinkommenModel.class
+com\mycompany\services\CharityService.class
+com\mycompany\model\EinkommenModel.class
+com\mycompany\model\IndexModel.class
+com\mycompany\model\KategorieformularModel.class
+com\mycompany\controller\UserController.class
+com\mycompany\controller\CharityController.class
+com\mycompany\model\PlaceOfActionModel.class
+com\mycompany\model\EingabeUpdateModel.class

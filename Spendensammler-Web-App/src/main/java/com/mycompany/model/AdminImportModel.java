@@ -549,15 +549,21 @@ public class AdminImportModel implements Serializable{
         }
     } 
     
+    private String[] paypalid = {"Ad0OYsrvfJhJJFPCRwip14IvbsoCk03VN9IKdjyU2xEtXvU_DQhx1-3pOjc7bbwSNYQRlhcYgDc9YJHB"}; 
     private String iban = "DE89370400440532013000";
     private String inhaber = "Westfälische Hochschule";
+    private String bic = "GENO";
     
     public void bankkontoImport() {
         //int num = 0;
-        for(int i = 0; i < orgaid.length; i++) {            
+        for(int i = 0; i < orgaid.length; i++) {
+//            if(num == 3) {
+//                num = 0;                        
+//            }
             List<Charity> charity = charityService.findCharity(orgaid[i]); 
-            //userController.newBAnkkontoOrga(iban, inhaber);
-            //charityController.newPlaceOfAction(charity.get(0));   
+            userController.newBAnkkontoOrga(iban, inhaber, bic, false, true, charity.get(0), paypalid[0]);
+            userService.setPaypalCharity(charity.get(0).getIdCharity(), paypalid[0]);
+            //num = num + 1;   
         }
     }
     

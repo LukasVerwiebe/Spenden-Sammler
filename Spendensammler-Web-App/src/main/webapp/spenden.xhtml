@@ -8,26 +8,21 @@
     </h:head>
 
     <h:body>
-       <div class="oben">
-            <h:form id="navbalken">
-
-                <p:growl id="messages"/>
-                <h:graphicImage style ="margin-left:15px" class ="image" value = "/images/spendenlogo.PNG"/>
-                <div class="navBox">
-
-                     <p:menubar>                    
+      <div class="oben">
+            <h:form>
+                <p:growl id="messages3"/>
+                <div class ="navBoxalt2">
+                    <p:menubar>                    
                         <p:menuitem value="Start" icon="pi pi-fw pi-home" action="/startseite.xhtml?faces-redirect=true" ajax="false"/>
                         <p:menuitem value="|" disabled="true"/>
                          
                         <p:menuitem value="Organisationen" icon="pi pi-fw pi-heart" action="/Organisationen.xhtml?faces-redirect=true" ajax="false"/>
                         <p:menuitem value="|" disabled="true"/>
-                        <p:menuitem value="Datenauswertung" icon="pi pi-fw pi-spinner" action="/Datenauswertung.xhtml?faces-redirect=true" ajax="false"/>
                         <p:divider layout="vertical"/>
-                        <p:menuitem value="|" disabled="true"/>
                         
                         <p:menuitem value="Registrieren" icon="pi pi-fw pi-user-edit" action="/User/register.xhtml?faces-redirect=true" rendered="#{!sessionData.eingeloggt}" ajax="false"/>
                         <p:menuitem value="|" disabled="true" rendered="#{!sessionData.eingeloggt}" />
-                        <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden').show();" rendered="#{!sessionData.eingeloggt}"/>
+                        <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden3').show();" rendered="#{!sessionData.eingeloggt}"/>
                         
                         <p:menuitem value="Einstellungen" icon="pi pi-fw pi-cog" action="#{startseiteModel.einstellungen}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
                         <p:menuitem value="|" disabled="true" rendered="#{sessionData.eingeloggt}" ajax="false"/>
@@ -35,41 +30,170 @@
 
 
                     </p:menubar>
+                     <p:growl id="growl3" sticky="true" showDetail="true" life="3000" />
+                    <p:dialog   header="Anmeldung" widgetVar="anmelden3" modal="true" resizable="false">
 
-                    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
-                    <p:dialog header="Anmeldung" widgetVar="anmelden" modal="true" resizable="false">
+                                                <p:panelGrid id="grid" styleClass="">
+                                                    <p:row style="height:70px">
+                                                        <p:column style="width:200px">
+                                                            <p:outputLabel for='email3' value="Emailadresse:"/>
+                                                        </p:column>
+                                                        <p:column width ="400px">        
+                                                            <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email3'/>
+                                                            <p:message for='email3' class='message'/>
+                                                        </p:column>
+                                                    </p:row>
+                                                    <p:row style="height:70px">
+                                                        <p:column>
+                                                            <p:outputLabel for='passwort3' value="Passwort:"/>
+                                                        </p:column>    
+                                                        <p:column>    
+                                                            <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort3'/>
+                                                            <p:message for='passwort3' class='message'/>
+                                                        </p:column>
+                                                    </p:row>        
+                                                    <p:row style="height:60px">
+                                                        <p:column>    
+                                                            <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl3"/>
+                                                            </p:column>
+                                                        <p:column> 
+                                                            <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden3').hide();" immediate="true" ajax="false"/>
+                                                        </p:column>
+                                                    </p:row>
+                                                </p:panelGrid>
+                                            </p:dialog>
+                </div> 
+            </h:form>
+            <h:form>
 
-                        <p:panelGrid id="grid" styleClass="">
-                            <p:row>
-                                <p:column>
-                                    <p:outputLabel for='email' value="Emailadresse:"/>
-                                </p:column>
-                                <p:column>        
-                                    <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email'/>
-                                    <p:message for='email' class='message'/>
-                                </p:column>
-                            </p:row>
-                            <p:row>
-                                <p:column>
-                                    <p:outputLabel for='passwort' value="Passwort:"/>
-                                </p:column>    
-                                <p:column>    
-                                    <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort'/>
-                                    <p:message for='passwort' class='message'/>
-                                </p:column>
-                            </p:row>        
-                            <p:row>
-                                <p:column>    
-                                    <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl"/>
-                                    <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden').hide();" immediate="true" ajax="false"/>
-                                </p:column>
-                            </p:row>
-                        </p:panelGrid>
-                    </p:dialog>
+                 
+                
+                <p:growl id="messages2"/>
 
-                </div>
-            </h:form>                      
-        </div>
+
+
+
+
+                <div class="navBoxalt">
+
+                    <p:menubar>                    
+                        <p:menuitem value="Start" icon="pi pi-fw pi-home" action="/startseite.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+
+                        <p:menuitem value="Organisationen" icon="pi pi-fw pi-heart" action="/Organisationen.xhtml?faces-redirect=true" ajax="false"/>
+                        <p:menuitem value="|" disabled="true"/>
+
+                        <p:divider layout="vertical"/>
+
+                        <p:menuitem value="Registrieren" icon="pi pi-fw pi-user-edit" action="/User/register.xhtml?faces-redirect=true" rendered="#{!sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{!sessionData.eingeloggt}" />
+                        <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden2').show();" rendered="#{!sessionData.eingeloggt}"/>
+
+                        <p:menuitem value="Einstellungen" icon="pi pi-fw pi-cog" action="#{startseiteModel.einstellungen}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="|" disabled="true" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                        <p:menuitem value="Logout" icon="pi pi-fw pi-sign-out" action="#{benutzerUpdateModel.logOut}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+
+
+                    </p:menubar>
+                    
+
+                    <p:growl id="growl2" sticky="true" showDetail="true" life="3000" />
+                    <p:dialog style="line-height: 50px" height ="350px" resizable="false" header="Anmeldung" widgetVar="anmelden2" modal="true">
+
+                        <p:panelGrid id="grid2" styleClass="" style="">
+                            
+                                
+                                <p:row style="height:100px;">
+
+                                    <p:outputLabel for='email2' value="Emailadresse:"/>
+                                </p:row>
+                                <p:row>
+                                    <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email2'/>
+                                </p:row>
+                                <p:message for='email2' class='message'/>
+
+                                <p:row>
+                                    <p:outputLabel for='passwort2' value="Passwort:"/>
+                                </p:row>
+                                <p:row>
+                                    <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort2'/>
+                                </p:row>
+                                <p:message for='passwort2' class='message'/>
+
+
+                                <p:row>
+                                       
+                                    <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl2"/>
+                                     <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden2').hide();" immediate="true" ajax="false"/>
+                                </p:row>
+                                
+                                    </p:panelGrid>
+                                    </p:dialog>
+
+                                    </div>
+
+                                    </h:form>  
+                                    <h:form id="navbalken">
+
+                                        <p:growl id="messages"/>
+                                        <h:graphicImage style ="margin-left:1.5vh" class ="image" value = "/images/spendenlogo.PNG"/>
+                                        <div class="navBox">
+
+                                            <p:menubar>                    
+                                                <p:menuitem value="Start" icon="pi pi-fw pi-home" action="/startseite.xhtml?faces-redirect=true" ajax="false"/>
+                                                <p:menuitem value="|" disabled="true"/>
+
+                                                <p:menuitem value="Organisationen" icon="pi pi-fw pi-heart" action="/Organisationen.xhtml?faces-redirect=true" ajax="false"/>
+                                                <p:menuitem value="|" disabled="true"/>
+                                                <p:menuitem value="Datenauswertung" icon="pi pi-fw pi-spinner" action="/Datenauswertung.xhtml?faces-redirect=true" ajax="false"/>
+                                                <p:divider layout="vertical"/>
+                                                <p:menuitem value="|" disabled="true"/>
+
+                                                <p:menuitem value="Registrieren" icon="pi pi-fw pi-user-edit" action="/User/register.xhtml?faces-redirect=true" rendered="#{!sessionData.eingeloggt}" ajax="false"/>
+                                                <p:menuitem value="|" disabled="true" rendered="#{!sessionData.eingeloggt}" />
+                                                <p:menuitem value="Anmelden" icon="pi pi-fw pi-sign-in" onclick="PF('anmelden').show();" rendered="#{!sessionData.eingeloggt}"/>
+
+                                                <p:menuitem value="Einstellungen" icon="pi pi-fw pi-cog" action="#{startseiteModel.einstellungen}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                                                <p:menuitem value="|" disabled="true" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+                                                <p:menuitem value="Logout" icon="pi pi-fw pi-sign-out" action="#{benutzerUpdateModel.logOut}" rendered="#{sessionData.eingeloggt}" ajax="false"/>
+
+
+                                            </p:menubar>
+
+                                            <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+                                            <p:dialog   header="Anmeldung" widgetVar="anmelden" modal="true" resizable="false">
+
+                                                <p:panelGrid id="grid" styleClass="">
+                                                    <p:row>
+                                                        <p:column>
+                                                            <p:outputLabel for='email' value="Emailadresse:"/>
+                                                        </p:column>
+                                                        <p:column>        
+                                                            <h:inputText class="texteinagbe" value="#{benutzerUpdateModel.emailBenutzer}" id='email'/>
+                                                            <p:message for='email' class='message'/>
+                                                        </p:column>
+                                                    </p:row>
+                                                    <p:row>
+                                                        <p:column>
+                                                            <p:outputLabel for='passwort' value="Passwort:"/>
+                                                        </p:column>    
+                                                        <p:column>    
+                                                            <h:inputSecret class="texteinagbe" value="#{benutzerUpdateModel.passwort}" id='passwort'/>
+                                                            <p:message for='passwort' class='message'/>
+                                                        </p:column>
+                                                    </p:row>        
+                                                    <p:row>
+                                                        <p:column>    
+                                                            <p:commandButton class="button" value="Anmelden" action="#{benutzerUpdateModel.loginUser}" update="growl"/>
+                                                            <p:commandButton class="button" value="Abbrechen" onclick="PF('anmelden').hide();" immediate="true" ajax="false"/>
+                                                        </p:column>
+                                                    </p:row>
+                                                </p:panelGrid>
+                                            </p:dialog>
+
+                                        </div>
+                                    </h:form>                      
+                                    </div>
 
         <div class="innen">
 
@@ -88,20 +212,20 @@
                 <h:form id='formpay'>
 
                            <div class="box0" style="margin: 0 auto">
-                        <p:outputLabel for='organisation' value="Organisation"/><br/><br/>
-                        <h:inputText class="texteinagbe" value="#{spendenModel.charity.name}" id='organisation' required="true" disabled="true"/><br/><br/> 
+                       
+                        <h:inputText class="hidden" value="#{spendenModel.charity.name}" id='organisation' required="true" disabled="true"/><br/><br/> 
                            </div>
                         
                          <div class="box0" style="margin: 0 auto;">
-                             <p:outputLabel for='kategorie' value="Kategorie"/><br/><br/>
-                        <p:selectOneMenu value="#{spendenModel.spendenaktion}" id="kategorie">
+                            
+                        <p:selectOneMenu class="hidden" value="#{spendenModel.spendenaktion}" id="kategorie">
                             <f:selectItem itemLabel="Allgemein" itemValue="#{null}" noSelectionOption="true" />
                             <f:selectItems value="#{spendenModel.kategorien}" /> 
                         </p:selectOneMenu><br/><br/>
 </div>
                         <div class="box0" style="margin: 0 auto;">
-                        <p:outputLabel for='betrag' value="Betrag:"/><br/><br/>
-                        <h:inputText class="texteinagbe" value="#{spendenModel.betrag}" id='betrag' required="true"/><br/><br/> 
+                       
+                        <h:inputText class="hidden" value="#{spendenModel.betrag}" id='betrag' required="true"/><br/><br/> 
                         <p:keyFilter mask="num" for="betrag"/><br/>
             </div>
                         <p:inputText class="hidden" value="#{spendenModel.bezahlt}" id='bezahlt' required="false">
@@ -110,16 +234,19 @@
                         <h:commandButton id="bezahltaktion" class="bezahltaktion" style="visibility:hidden" value="Test" action="#{spendenModel.spendenAktion}"/>
                 </h:form> 
 
-                <h:outputScript name="script/paypalidscript.js"></h:outputScript>
-                <div id="paypal-button-container"></div>
-                <h:outputScript name="script/paypalscript.js">
-
-                </h:outputScript>
-
+                <div style="margin-top:-15%;padding:10px;">Danke für ihr Interesse.<br/><br/>
+                Bitte wählen sie ihren gewünschten Payment-Provider aus<br/><br/>
+                
+                <h:form>
+                <p:commandButton class="buttontabelle" value="Paypal" action="/paypalspenden.xhtml?faces-redirect=true"></p:commandButton>
+                <!--<p:commandButton class="buttontabelle" value="Giropay" action="/Girospenden.xhtml?faces-redirect=true"></p:commandButton>-->
+                <p:commandButton class="buttontabelle" value="Stripe" action="/stripeSpenden.xhtml?faces-redirect=true"></p:commandButton>
+                </h:form>
+</div>
             </div>
         </div>
         
-           <div class="unten" >
+         <div class="unten" style="height:30%">
             <h:form id="fussbalken">
 
                 <div class="conainterfuss1">
@@ -155,5 +282,6 @@
 
             </h:form>          
         </div>
+
     </h:body>
 </html>

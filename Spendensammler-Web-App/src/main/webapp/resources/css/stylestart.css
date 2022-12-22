@@ -7,13 +7,13 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 18px;
+    font-size: 23px;
     font-weight: normal;
     color: black;
     background-color: white;
     line-height: 12px;
-    height: 96vh;
-    width: 99vw;
+    height: 92vh;
+    width: 98vw;
     margin:0px;
     margin: 0 auto;
     /*background-color:grey;*/
@@ -48,27 +48,33 @@ th {
     
 }
 h3{
-    /*text-decoration: underline;*/
+    text-decoration: underline;
+    font-size: 3vh;
+    margin: 0 auto;
+    line-height:4vh;
+    text-align:center;
+    
 }
 h5{
-    /*text-decoration: underline;*/
-    font-size: 30px;
+    text-decoration: underline;
+    font-size: 3vh;
     margin: 0 auto;
+    line-height:4vh;
     text-align:center;
 }
 input[type=text] {
-    border-radius: 4px;
+    border-radius: 1vh;
     width: 90%;
-    height: 40px;
-    font-size:20px;
+    height: 3vh;
+    font-size:2vh;
     resize: none;
     box-shadow: none;
     background-color:#F0F0F0;
 }
 input[type=password] {
     border-radius: 4px;
-    width: 90%;
-    height: 45px;
+    width: 50vw;
+    height: 4vh;
     resize: none;
     box-shadow: none;
     background-color:#F0F0F0;
@@ -80,22 +86,22 @@ font-color:red;
 
 html {
     min-height: 100%;
-    /*background-color: #92a8d1;*/
+
     font-family: fantasy;
 }
 
 label {
-    line-height: 10px;
+    line-height: 1vh;
 }
 
 h1 {
-    /*text-decoration: underline;*/
+    text-decoration: underline;
     color: black;
 }
 
 #abreich {
     font-family:sans-serif;
-    width: 200px;
+    width: 12vw;
 }
 
 .ui-outputlabel{
@@ -111,16 +117,15 @@ h1 {
 
 .oben {
     /*float: left;*/
-    height: 200px;
     width: 100%;
-    height: 12%;
+    height: 12vh;
     text-align: left;
     border-bottom: 1px solid lightgrey;
     border-top: 1px solid green;
     border-left: 1px solid green;
     border-right: 1px solid green;
     /*padding: 15px;*/
-    /*background-color: white;*/
+
     background-color: white;
 }
 .innen {
@@ -134,19 +139,16 @@ h1 {
     border-right: 0px solid green;
     padding: 0px;
    
-    background-color: white;
+    background-color: mistyrose;
     display:flex;
     
 }
 .unten {
     /*float: left;*/
     width: 100%;
+    
      /*height: 20%;*/
     /*text-align: center;*/
-    border-bottom: 0px solid green;
-
-    border-left: 0px solid green;
-    border-right: 0px solid green;
     padding: 0px;
    
     background-color:#285185;
@@ -157,20 +159,16 @@ h1 {
 .navBox{    
     width: 98%;
     /*text-align: center;*/
-    margin-left:15px;
-    border-bottom: 0px solid green;
-    border-top: 0px solid green;
-    border-left: 0px solid green;
-    border-right: 0px solid green;
+    margin-left:1vh;
    
 }
 
 .contenbox {  
    /*overflow:hidden;*/
     width: 85%;
-    height: 100%;
+    height: 99%;
 
-    /*background-color: white;*/
+
 }
 
 .contenbox1 {  
@@ -181,19 +179,19 @@ h1 {
 .contentbox1 {  
     width: 15%;
     height: 100%;
-  /*background-color: blue;*/
+
 }
 .contentbox2 {  
     width: 60%;
     height: 100%;
 
-     /*background-color:brown;*/
+
 }
 .contentbox3 {  
     width: 15%;
     height: 100%;
 
-     /*background-color: grey;*/
+
 }
 .contentbox1-1{
     width: 100%;
@@ -215,7 +213,7 @@ h1 {
     width: 85%;
     height: 100%;
 
-     /*background-color: red;*/
+
     
 }
 .contentboxstart-1{
@@ -229,7 +227,7 @@ h1 {
     width: 15%;
     height: 95%;
 
-     /*background-color: grey;*/
+
     
 }
 .contentbox3-1{
@@ -245,8 +243,8 @@ h1 {
     height: 95%;
 }
 .hiddenbox{
-   height:80px;
-    padding: 10px;
+   height:8vh;
+    padding: 1vh;
     overflow: hidden;
     width:100%;
     
@@ -269,32 +267,12 @@ overflow:hidden;
 }
 .nobordergrid td{
    border: none;
-   /*background-color:green;*/
-}
-.form1{
-    height:500px;
-     width: 15%;
 
-     margin:0px;
-}
-.form2{
-    height:500px;
-   width: 15%;
-
-   margin:0px;
-       overflow : hidden;
-}
-.form3{
-    height:500px;
-     width: 15%;
-overflow:hidden;
-     margin:0px
-    
 }
 input .rolle{
   
      width:60%;
-     /*background-color:red;*/
+
 }
 input .vorname{
      width:80%;
@@ -302,7 +280,6 @@ input .vorname{
     
 }
 input .nachname{
-   object-position:500px;
     width:60%;
      /*float:left;*/
     
@@ -334,7 +311,6 @@ input .passwort{
 }
 .buttonsmiddle{
     width: 100%;
-
     text-align:center;
     /*align-content: center;*/
    }
@@ -350,19 +326,19 @@ input .passwort{
 }
 .conainterfuss1 {
     /*overflow:hidden;*/
-    height:50%;
+    height:100%;
     display: flex;
     /*flex-direction: row;*/
     /*float: left;*/
     /* width: 33.33%; three boxes (use 25% for four, and 50% for two, etc) */
     /* padding: 50px; if you want space between the images */
-    line-height: 10px;
-    font-size: 15px;
-    margin-bottom:10px;
+    line-height: 1vh;
+    font-size: 2vh;
+    margin-bottom:1vh;
    
 }
 .image{
-    margin-left:15px;
+    margin-left:1vh;
      padding-right: 0px;
      /*margin-right: -2px;*/
 }
@@ -393,11 +369,11 @@ input .passwort{
 
 
 .contextmenu {
-    font-size: 15px;
+    font-size: 2vh;
 }
 
 .buttonpup {
-    font-size:15px !important;
+    font-size:2vh !important;
 }
 
 /*.texteinagbe {
@@ -407,7 +383,6 @@ input .passwort{
     height: 25px;
     resize: none;
     box-shadow: none;
-    background-color:red;
     
 }*/
 input:hover{
@@ -416,12 +391,12 @@ input:hover{
 
 .box, .box0, .box1, .box2, .box3, .box4, .box5, .box6, .box7 {
     /*float: left;*/
-   height:60px;
-    padding: 10px;
+   height:10vh;
+    padding: 1vh;
     overflow: hidden;
-    width:30%;
+    width:43vh;
     margin: 0;
-    line-height:25px;
+    line-height:2vh;
     /*float:left;*/
     /*padding-left: px;*/
     
@@ -435,45 +410,36 @@ input:hover{
 }
 .boxbig{
     width:100%;
-    padding:10px;
+    padding:1vh;
 }
 .boxbundle{
-        line-height:25px;
-    width:30%;
-   height:60px;
-    padding: 10px;
+        line-height:2vh;
+    width:25vw;
+   height:10vh;
+    padding: 1vh;
     overflow: hidden;
     display: inline-block;
     margin:  0;
 }
-.boxtest{
-   height:80px;
-    padding: 10px;
-    overflow: hidden;
-}
-.formtrick{
-    width:50%;
-    left:10%;
-}
 
-.hbutton {
-    background-color: #4CAF50;
+/*.hbutton {
+
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 2vh 3vh;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 2vh;
    
     cursor: pointer;
-}
+}*/
 
 .button {
     border-width: thin;
-    padding: 15px 55px;
-    font-size: 16px;
-    margin: 4px 2px;
+    padding: 2vh 6vh;
+    font-size: 2vh;
+    margin: 1vh 1vh;
     color: blue;
     font-family:sans-serif;
     background-color: whitesmoke;
@@ -486,16 +452,21 @@ input:hover{
 }
 
 button.ui-button {
-    padding: 10px 32px;
-    font-size: 16px;
-    margin: 4px 2px;
-    font-family:sans-serif;
-    color: blue;
-}
+ padding: 1vh 3vh;
+    margin-right: 1vh;
+    outline: none;
+    border: 1px solid #0082e6;
+    border-radius: 2vh;
+    cursor: pointer;
+    color: #0082e6;
+    background: transparent;
+    white-space: nowrap;
+    text-align:center;
+}/*
 
 button.ui-button:hover {
     background: lightskyblue;
-}
+}*/
 
 .message{
     color: blue;
@@ -511,28 +482,22 @@ button.ui-button:hover {
 
 
 span + span {
-    margin-left: 50px;
-}
-
-.rightmost{;
-}
-.yellow{
-    background: yellow;
+    margin-left: 5vh;
 }
 
 p{
-    font-size: 20px;
-    padding: 15px;
-    line-height: 25px;
-    margin-bottom: 15px;
+    font-size: 2vh;
+    padding: 1vh;
+    line-height: 3vh;
+    margin-bottom: 2vh;
 }
 
 /* Dropdown Button */
 .dropbtn {
     background-color: #04AA6D;
     color: black;
-    padding: 15px;
-    font-size: 16px;
+    padding: 1vh;
+    font-size: 2vh;
     border: none;
 }
 
@@ -548,14 +513,14 @@ p{
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 1vh 1vh 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 1vh 2vh;
     text-decoration: none;
     display: block;
 }
@@ -582,10 +547,6 @@ p{
 /* mouse over link */
 a:hover {
     color: lightskyblue;
-}
-.white{
-    background-color: whitesmoke;
-    padding: 5px;
 }
 .main{
     background-color:grey
@@ -663,7 +624,7 @@ a{
             display: flex;
             padding-bottom: 3px;
             border-bottom: 1px solid #ddd;
-            margin-top: 100px;
+            margin-top: 10vh;
           
 
             
@@ -675,7 +636,7 @@ a{
 
         }
         .right-column img{
-            margin-top: 30px;
+            margin-top: 3vh;
             width: 80%;
 
 
@@ -684,4 +645,480 @@ a{
             display: flex;
             background-color: mistyrose;
             margin-top: 0cm;
+        }
+        
+/*        .button button {
+            padding: 7px 3vh;
+            margin-right: 15px;
+            outline: none;
+            border: 1px solid #0082e6;
+            border-radius: 20px;
+            cursor: pointer;
+            color: #0082e6;
+            background: transparent;
+                }*/
+
+input[type=button], input[type=submit], input[type=reset]{
+    padding: 1vh 3vh;
+    margin-right: 1vh;
+    outline: none;
+    border: 1px solid #0082e6;
+    border-radius: 2vh;
+    cursor: pointer;
+    color: #0082e6;
+    background: transparent;
+    white-space: nowrap;
+    text-align:center;
+}
+
+@media (max-width: 1000px){
+    .image{
+        display:none;
+    }
+    .right-column{
+        display:none;
+    }
+     .boxbundle{
+        width:25vh !important;
+        height:15vh !important;
+        font-size: 15px ;
+    }
+    .innen{
+        height:auto !important;
+    }
+    .body{
+        height:auto !important;
+        /*fonz-size:20px !important;*/
+    }
+    .banner{
+        height:80vh;
+    }
+    @media (orientation: landscape) {
+
+        .oben{
+            height:22vh;
+        }
+         body{
+            height: auto;
+        }
+        .box1{
+                        /*padding: 20px;*/
+        }
+        .left-column{
+            width:100%;
+            flex-basis: 100%;
+            text-align:center;
+            
+        }
+        .contentbox3-1{
+            width:30%;
+        }
+/*        .contentbox3-2{
+            display:none;
+        }*/
+          .contentbox3-3{
+            display:none;
+        }
+        .innen2 {
+    /*float: left;*/
+    text-align: left;
+    border-bottom: 0px solid green;
+    border-top: 0px solid green;
+    border-left: 0px solid green;
+    border-right: 0px solid green;
+    padding: 0px;
+    display:block;
+   
+    background-color: mistyrose;
+        
+    }
+    .boxbundle2{
+            line-height:2vh;
+            /*width:25vh !important;*/
+            padding: 1vh;
+            font-size: 30px ;
+            overflow: hidden;
+            display: inline-block;
+            margin:  0;
+            height:60vh !important;
+            /*font-size:30px;*/
+        }
+    }
+    @media (orientation: portrait) {
+        body{
+            height: auto;
+        }
+        .oben{
+            /*height:100vh;*/
+            text-align:center;
+             height:16vh;
+        }
+    
+        .navBox{
+            text-align:center;
+            /*height:7vh;*/
+
+        }
+        .left-column{
+            width:100%;
+            flex-basis: 100%;
+            text-align:center;
+        }
+        .boxbundle2{
+            line-height:2vh;
+            width:25vh !important;
+            padding: 1vh;
+            font-size: 30px ;
+            overflow: hidden;
+            display: inline-block;
+            margin:  0;
+            height:60vh !important;
+            /*font-size:30px;*/
+        }
+        .conainterfuss1{
+            display:block
+        }
+        .contentbox3-3{
+            display:none;
+        }
+        .button{
+            height:5vh;
+            margin:2px
+        }
+            .contentbox3-1{
+     width: 100%;
+    height: 20%;
+}
+.contentbox3-2{
+    width: 100%;
+    height: 100%;
+}
+.columnHigh{
+    width:50% !important;
+}
+.contenbox1 {
+    width:100% !important;
+}  
+.topcenterdiva{
+    width:100% !important;
+}
+    
+.unternehmen{
+     text-align:center;
+
+}
+.links1{
+     text-align:center;
+
+}
+.Support{
+    text-align:center;
+}
+.kontakt{
+    height:18vh;
+    text-align:center;
+}
+    
+    }
+
+   
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ @media (max-width: 667px){
+    .image{
+        display:none;
+    }
+    .right-column{
+        display:none;
+    }
+     .boxbundle{
+        width:25vh !important;
+        height:15vh !important;
+        font-size: 30px !important;
+    }
+    @media (orientation: landscape) {
+        navBox{
+            width:50%;
+        
+        }
+
+        .oben{
+            height:22vh;
+        }
+        .left-column{
+            width: auto;
+            flex-basis: 100%;
+            margin-left: 4vh;
+            
+            
+        }
+        h1{
+            font-size: calc(2.5vw +2.5rem);
+            margin-bottom: 10vh;
+            margin-top: 5vh;
+        }
+        .untertitel{
+            font-size: calc(2vw + 1.5rem);
+            margin-bottom: 10vh;
+        }
+        p{
+            font-size: calc(1vw + 1rem);
+            margin-left: 0vh;
+            line-height: 1.4;
+            
+            
+        }
+        .boxbundle{
+            
+            line-height: 1.3;
+            margin-left: 10vh;
+            width:50vh !important;
+            height:15vh !important;
+            font-size: 13px !important;
+           
+     
+        }
+        .unten{
+            height: 20vh;
+            font-size: 20vh;
+           
+            
+        }
+        
+        .conainterfuss1{
+            font-size:2.5vh;
+            line-height: 0.7;
+            margin-left: -15vh;
+           
+        }
+        .contentbox3-1{
+            font-size: 16px !important;
+            margin-left: 8vh;
+        }
+        .contentbox3-2{
+             font-size: 14px !important;
+             margin-left: -20vh;
+             margin-right: 10vh;
+        }
+        .contentbox3-3{
+            display: none;
+        }
+        .kontakt{
+            margin-left: 20vh;
+            
+        }
+        .copyright{
+            display:none;
+        }
+        .telefon{
+            display:none;
+        }
+        .box,.box1{
+            
+            width:50vh !important;
+            height:15vh !important;
+            font-size: 14px !important;
+            line-height: 1.3;
+        }
+        .boxbundle1{
+            line-height: 1.3;
+            margin-left: 0vh;
+            width:50vh !important;
+            height:15vh !important;
+            font-size: 13px !important;
+             
+        }
+        .buttonsmiddle{
+             font-size: 13px !important;
+        }
+        .banner h1{
+            font-size: calc(1.5vw +1.5rem);
+            margin-bottom: 0vh;
+            margin-top: 5vh;
+            line-height: 1.3;
+         
+  
+        }
+        .banner h3{
+               font-size: calc(1vw + 1.5rem);
+               margin-bottom: 10vh;
+               line-height: 1.3;
+        }
+        .banner  p{
+            font-size: calc(0.5vw + 1rem);
+            margin-left: 0vh;
+            line-height: 1.3;
+            
+        }
+        .contenbox h1{
+          font-size: 8vh;  
+          margin-bottom: 3vh;
+        }
+        
+        .contenbox h2 {
+            font-size: 6vh;
+        }
+        .navBoxVertical{
+            font-size: 4vh;
+        }
+        .contentbox1-1{
+            height: 40vh;
+            font-size: 4vh;
+            margin-top: 6vh;
+        }
+        .box0{
+            margin-top: 2vh;
+            line-height: 0.5;
+            font-size: 4vh;
+            width: 40vh;
+            height: 13vh;
+        }
+        .topcenterdiva h5{
+            margin-bottom: 2vh;
+            font-size: 6vh;
+             margin-top:2vh;
+        }
+        .boxbig {
+            font-size: 15px !important;
+        }
+        .bodydaten {
+            display: none;
+        }
+        .dataAWT {
+            display: none;
+        }
+        
+       
+    }
+    @media (orientation: portrait) {
+        /* startseite*/
+        .strangeinnen{
+            height:100vh;
+            background-color:yellow;
+        }
+         .navBox{
+            width:100%;
+        
+        }
+        .innen{
+            
+            
+            display:block;
+        }
+        .oben{
+            height:6vh;
+        }
+        .left-column{
+            width: auto;
+            flex-basis: 100%;
+            margin-left: 4vh;
+            
+            
+        }
+        
+
+        h1{
+            font-size: 6vh;
+            margin-bottom: 5vh;
+            margin-top: -3vh;
+        }
+        .untertitel{
+            font-size: 3vh;
+            margin-bottom: 3vh;
+            line-height: 1;
+        }
+        p{
+            font-size: 2.5vh;
+            margin-left: 0vh;
+            line-height: 1.4;
+            
+            
+        }
+        .boxbundle{
+            
+            line-height: 1.4;
+            margin-left: 0vh;
+            width:20vh !important;
+            height:15vh !important;
+            font-size: 2vh !important;
+           
+     
+        }
+        .unten{
+            /*height: 15vh;*/
+            font-size: 20vh;
+            margin-top:0vh;
+           
+            
+        }
+         .telefon ,  .copyright , .links1 , .unternehmen{
+            display:none;
+        }
+        .kontakt, .Support {
+            margin-top: 2vh;
+        }
+        
+        /* organisationen*/
+        .contentbox3-3{
+            display:none;
+        }
+        
+        
+        .contentbox3-2  {
+            margin-top: 5vh;
+            width: 100%;
+            height:100%;
+            font-size:1.3vh;
+
+        }
+        .contenbox1{
+          margin-top: 2vh;
+            width: 95%;
+            height:60%;
+            font-size:1.3vh;  
+        }
+        .contentbox3-2 h3{
+            font-size: 4vh;
+            margin-top:2vh;
+           margin-left: 5vh;
+            
+        }
+        .contentbox3-1 h3{
+            font-size: 4vh;
+            margin-top:2vh;
+           
+            
+        }
+        .contenbox1 h2 {
+            margin-top: -0.5vh;
+            font-size: 2.5vh;
+        }
+        .boxbundle1{
+            line-height: 1.2;
+        }
+        .contentbox3-1{
+            margin-top: 1vh; 
+            width: 60%;
+            font-size: 1.6vh;
+             
+            
+        }
+      
+
+    }
         }

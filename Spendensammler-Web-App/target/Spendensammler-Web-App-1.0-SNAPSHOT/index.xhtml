@@ -38,59 +38,59 @@
                 </div>                
             </f:facet>
             
-            <p:column headerText="*" selectionMode="multiple" style="width:10px;text-align:center"/>            
+            <p:column headerText="*" selectionMode="multiple" style="width:1vh;text-align:center"/>            
             
-            <p:column headerText="ID" sortBy="#{charity.idCharity}" filterBy="#{charity.idCharity}" style="width:100px; text-align:center">
+            <p:column headerText="ID" sortBy="#{charity.idCharity}" filterBy="#{charity.idCharity}" style="width:5.55vh; text-align:center">
                 <h:outputText value="#{charity.idCharity}" />
             </p:column>
             
-            <p:column headerText="Name" sortBy="#{charity.name}" filterBy="#{charity.name}" style="width:300px; text-align:left">
-                <h:outputText value="#{charity.name}" style="width:300px; text-align:left; line-height: 120%"/>
+            <p:column headerText="Name" sortBy="#{charity.name}" filterBy="#{charity.name}" style="width:16.67vh; text-align:left">
+                <h:outputText value="#{charity.name}" style="width:16.67vh; text-align:left; line-height: 120%"/>
             </p:column>
             
-            <p:column headerText="Gründungsjahr" sortBy="#{charity.foundingYear}" filterBy="#{charity.foundingYear}" style="width:150px; text-align:center">
+            <p:column headerText="Gründungsjahr" sortBy="#{charity.foundingYear}" filterBy="#{charity.foundingYear}" style="width:8.83vh; text-align:center">
                 <h:outputText value="#{charity.foundingYear}"/>                    
             </p:column>
             
-            <p:column headerText="Aktionsbereich" sortBy="#{charity.fieldsOfAction}" filterBy="#{charity.fieldsOfAction}" style="width:500px; text-align:left; line-height: 120%" visible="false">
+            <p:column headerText="Aktionsbereich" sortBy="#{charity.fieldsOfAction}" filterBy="#{charity.fieldsOfAction}" style="width:27.77vh; text-align:left; line-height: 120%" visible="false">
                 <h:outputText value="#{charity.fieldsOfAction}"/>                    
             </p:column>
             
-            <p:column headerText="Weltansicht" sortBy="#{charity.worldview}" filterBy="#{charity.worldview}" style="width:300px; text-align:center; line-height: 120%">
+            <p:column headerText="Weltansicht" sortBy="#{charity.worldview}" filterBy="#{charity.worldview}" style="width:16.67vh; text-align:center; line-height: 120%">
                 <h:outputText value="#{charity.worldview}"/>                    
             </p:column>
             
-            <p:column headerText="Finazplan" sortBy="#{charity.advertingFinancialInspektion}" filterBy="#{charity.advertingFinancialInspektion}" style="width:500px; text-align:left; line-height: 120%" visible="false">
+            <p:column headerText="Finazplan" sortBy="#{charity.advertingFinancialInspektion}" filterBy="#{charity.advertingFinancialInspektion}" style="width:27.77vh; text-align:left; line-height: 120%" visible="false">
                 <h:outputText value="#{charity.advertingFinancialInspektion}"/>                    
             </p:column>
             
-            <p:column headerText="Logo" sortBy="#{charity.logoPath}" filterBy="#{charity.logoPath}" style="width:300px; text-align:left; line-height: 120%" visible="false">
+            <p:column headerText="Logo" sortBy="#{charity.logoPath}" filterBy="#{charity.logoPath}" style="width:16.67vh; text-align:left; line-height: 120%" visible="false">
                 <h:outputText value="#{charity.logoPath}"/>                    
             </p:column>
             
-            <p:column headerText="Webseite" sortBy="#{charity.homepage}" filterBy="#{charity.homepage}" style="width:300px; text-align:left; line-height: 120%" visible="true">
+            <p:column headerText="Webseite" sortBy="#{charity.homepage}" filterBy="#{charity.homepage}" style="width:16.67vh; text-align:left; line-height: 120%" visible="true">
                 <h:outputLink value="http://#{charity.homepage}" target="_blank">
                     <h:outputText value="#{charity.homepage}"/>    
                 </h:outputLink>
             </p:column>
             
-            <p:column headerText="Mitglieder" sortBy="#{charity.ch_orga.membercount}" filterBy="#{charity.ch_orga.membercount}" style="width:150px; text-align:center" visible="false">
+            <p:column headerText="Mitglieder" sortBy="#{charity.ch_orga.membercount}" filterBy="#{charity.ch_orga.membercount}" style="width:8.83vh; text-align:center" visible="false">
                 <h:outputText value="#{charity.ch_orga.membercount}"/>                    
             </p:column>
             
-            <p:column headerText="Angestellte" sortBy="#{charity.ch_orga.employeecount}" filterBy="#{charity.ch_orga.employeecount}" style="width:150px; text-align:center" visible="false">
+            <p:column headerText="Angestellte" sortBy="#{charity.ch_orga.employeecount}" filterBy="#{charity.ch_orga.employeecount}" style="width:8.83vh; text-align:center" visible="false">
                 <h:outputText value="#{charity.ch_orga.employeecount}"/>                    
             </p:column>
             
-            <p:column headerText="Helfer" sortBy="#{charity.ch_orga.volounteersCount}" filterBy="#{charity.ch_orga.volounteersCount}" style="width:150px; text-align:center" visible="false">
+            <p:column headerText="Helfer" sortBy="#{charity.ch_orga.volounteersCount}" filterBy="#{charity.ch_orga.volounteersCount}" style="width:8.83vh; text-align:center" visible="false">
                 <h:outputText value="#{charity.ch_orga.volounteersCount}"/>                    
             </p:column>
             
-            <p:column headerText="Management" sortBy="#{charity.ch_orga.managmentbody}" filterBy="#{charity.ch_orga.managmentbody}" style="width:300px; text-align:center">
+            <p:column headerText="Management" sortBy="#{charity.ch_orga.managmentbody}" filterBy="#{charity.ch_orga.managmentbody}" style="width:16.67vh; text-align:center">
                 <h:outputText value="#{charity.ch_orga.managmentbody}"/>                    
             </p:column>
             
-            <p:column headerText="Jahr" sortBy="#{charity.ch_orga.orgaYear}" filterBy="#{charity.ch_orga.orgaYear}" style="width:150px; text-align:left; line-height: 120%" visible="false">
+            <p:column headerText="Jahr" sortBy="#{charity.ch_orga.orgaYear}" filterBy="#{charity.ch_orga.orgaYear}" style="width:8.83vh; text-align:left; line-height: 120%" visible="false">
                 <h:outputText value="#{charity.ch_orga.orgaYear}"/>                    
             </p:column>
             

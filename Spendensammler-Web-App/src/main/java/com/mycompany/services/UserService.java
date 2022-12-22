@@ -152,17 +152,33 @@ public class UserService {
     }
     
     public void createNewnewBAnkkontoOrga(String ibanBankkonto, String inhaberBankkonto, String bicBankkonto, boolean deletedBankkonto, boolean aktivKonto, Charity charity, String paypalid) {
-        try { 
+        try {
+            em.getTransaction().begin();  
             Bankkonto bankkonto = new Bankkonto(ibanBankkonto, inhaberBankkonto, bicBankkonto, deletedBankkonto);
             bankkonto.setAktivKonto(aktivKonto);
             bankkonto.setPaypalid(paypalid);
+            //charity.setPaypalid(bankkonto.getPaypalid());
             
             // Verbindungen:
             bankkonto.setCharity(charity);
             charity.getBankkonto().add(bankkonto);
             
-            em.getTransaction().begin();            
+            //em.getTransaction().begin();            
             em.persist(bankkonto);
+            em.getTransaction().commit();
+        } catch(ConstraintViolationException cve) {
+            System.out.println("Fehler Datenzugriff Bankkonto");
+        }
+    }
+    
+    public void setPaypalCharity(long id, String paypalid) {
+        try {
+            Charity charity = em.find(Charity.class, id);
+            em.getTransaction().begin();  
+            
+            charity.setPaypalid(paypalid);
+                        
+            //em.persist(charity);
             em.getTransaction().commit();
         } catch(ConstraintViolationException cve) {
             System.out.println("Fehler Datenzugriff Bankkonto");
@@ -370,7 +386,20 @@ public class UserService {
         } catch(Exception e) {
             System.out.println(e);
         }        
-    } 
+    }
+    
+    public void benutzerBankkontoSetztenImport(Bankkonto bankkonto, Charity charity) {
+        try {
+            em.getTransaction().begin();
+            
+            bankkonto.setAktivKonto(true);
+            charity.setPaypalid(bankkonto.getPaypalid());
+            
+            em.getTransaction().commit();
+        } catch(Exception e) {
+            System.out.println(e);
+        }        
+    }
     
     public List<Quittung> orgaDiagrammQuittungen(int jahr, Long id) {
         Query query = em.createQuery("SELECT q FROM Quittung AS q WHERE q.charity.idCharity = " + id  + " AND YEAR(q.erstelldatum) = " + jahr);

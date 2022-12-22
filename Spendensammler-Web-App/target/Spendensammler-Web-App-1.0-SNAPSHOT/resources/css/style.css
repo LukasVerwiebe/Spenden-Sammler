@@ -7,13 +7,13 @@
 
 body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 18px;
+    font-size: 23px;
     font-weight: normal;
     color: black;
-    background-color: white;
+    background-color:#285185;
     line-height: 12px;
-    height: 96vh;
-    width: 99vw;
+    /*    height: 92vh;
+        width: 98vw;*/
     margin:0px;
     margin: 0 auto;
     /*background-color:grey;*/
@@ -36,7 +36,7 @@ table,th,td {
 }
 
 th {
-    
+
     border-collapse: collapse;
     border-width: 1px;
     margin: 4px;
@@ -44,22 +44,28 @@ th {
     text-alitgn: center;
 }
 #checkboxDT{
-    
-    
+
+
 }
 h3{
     text-decoration: underline;
+    font-size: 30px;
+    margin: 0 auto;
+    line-height:4vh;
+    text-align:center;
+
 }
 h5{
     text-decoration: underline;
     font-size: 30px;
     margin: 0 auto;
+    line-height:4vh;
     text-align:center;
 }
 input[type=text] {
-    border-radius: 4px;
+    border-radius: 1vh;
     width: 90%;
-    height: 40px;
+    height: 3vh;
     font-size:20px;
     resize: none;
     box-shadow: none;
@@ -68,7 +74,7 @@ input[type=text] {
 input[type=password] {
     border-radius: 4px;
     width: 90%;
-    height: 45px;
+    height: 30px;
     resize: none;
     box-shadow: none;
     background-color:#F0F0F0;
@@ -80,12 +86,12 @@ font-color:red;
 
 html {
     min-height: 100%;
-    /*background-color: #92a8d1;*/
+
     font-family: fantasy;
 }
 
 label {
-    line-height: 10px;
+    line-height: 1vh;
 }
 
 h1 {
@@ -95,7 +101,7 @@ h1 {
 
 #abreich {
     font-family:sans-serif;
-    width: 200px;
+    width: 12vw;
 }
 
 .ui-outputlabel{
@@ -112,93 +118,92 @@ h1 {
 .oben {
     /*float: left;*/
     width: 100%;
-    height: 130px;
+    /*height: 12vh;*/
     text-align: left;
     border-bottom: 1px solid lightgrey;
     border-top: 1px solid green;
     border-left: 1px solid green;
     border-right: 1px solid green;
     /*padding: 15px;*/
-    /*background-color: white;*/
+
     background-color: white;
 }
 .innen {
     /*float: left;*/
-    width: 100%;
-     height: 90%;
+    /*    width: 100%;
+         height: 90%;*/
     text-align: left;
     border-bottom: 0px solid green;
     border-top: 0px solid green;
     border-left: 0px solid green;
     border-right: 0px solid green;
     padding: 0px;
-   
-    background-color: white;
+
+    background-color: mistyrose;
     display:flex;
-    
+
 }
 .unten {
     /*float: left;*/
     width: 100%;
-     /*height: 20%;*/
-    /*text-align: center;*/
-    border-bottom: 0px solid green;
 
-    border-left: 0px solid green;
-    border-right: 0px solid green;
+    /*height: 20%;*/
+    /*text-align: center;*/
     padding: 0px;
-   
+
     background-color:#285185;
     color:white;
     /*margin-bottom:50px;*/
 }
 
-.navBox{    
-    width: 98%;
+.navBox{
+    /*width: 98%;*/
     /*text-align: center;*/
-    margin-left:15px;
-    border-bottom: 0px solid green;
-    border-top: 0px solid green;
-    border-left: 0px solid green;
-    border-right: 0px solid green;
-   
+    /*margin-left:1vh;*/
+
+}
+.navBoxalt{
+    display:none;
+}
+.navBoxalt2{
+    display:none;
 }
 
-.contenbox {  
-   /*overflow:hidden;*/
+.contenbox {
+    /*overflow:hidden;*/
     width: 85%;
-    height: 100%;
+    height: 99%;
 
-    /*background-color: white;*/
+
 }
 
-.contenbox1 {  
+.contenbox1 {
     width: 75%;
     height: 100%;
 
 }
-.contentbox1 {  
+.contentbox1 {
     width: 15%;
     height: 100%;
-  /*background-color: blue;*/
+
 }
-.contentbox2 {  
+.contentbox2 {
     width: 60%;
     height: 100%;
 
-     /*background-color:brown;*/
+
 }
-.contentbox3 {  
+.contentbox3 {
     width: 15%;
     height: 100%;
 
-     /*background-color: grey;*/
+
 }
 .contentbox1-1{
     width: 100%;
 
 }
-.contentbox1-1form {  
+.contentbox1-1form {
     /*width: 100%;*/
     height:100%;
 
@@ -214,8 +219,8 @@ h1 {
     width: 85%;
     height: 100%;
 
-     /*background-color: red;*/
-    
+
+
 }
 .contentboxstart-1{
     /*color:red;*/
@@ -228,11 +233,11 @@ h1 {
     width: 15%;
     height: 95%;
 
-     /*background-color: grey;*/
-    
+
+
 }
 .contentbox3-1{
-     width: 10%;
+    width: 15vw;
     height: 95%;
 }
 .contentbox3-2{
@@ -244,130 +249,117 @@ h1 {
     height: 95%;
 }
 .hiddenbox{
-   height:80px;
-    padding: 10px;
+    height:8vh;
+    padding: 1vh;
     overflow: hidden;
     width:100%;
-    
+
 }
 .columnform{
     /*background-color:#E6E6FA;*/
-/*    background-color:yellow;
-         display:flex;
-     flex-direction:row;
-     text-align:center;
-     align-items: center;
-  justify-content: center;
-  gap: -10px;
-     margin:0px auto;*/
-/*display:flex;
-flex-direction:column;*/
-/*text-align:center;*/
-/*float:left;*/
-overflow:hidden;
+    /*    background-color:yellow;
+             display:flex;
+         flex-direction:row;
+         text-align:center;
+         align-items: center;
+      justify-content: center;
+      gap: -10px;
+         margin:0px auto;*/
+    /*display:flex;
+    flex-direction:column;*/
+    /*text-align:center;*/
+    /*float:left;*/
+    overflow:hidden;
 }
 .nobordergrid td{
-   border: none;
-   /*background-color:green;*/
-}
-.form1{
-    height:500px;
-     width: 15%;
+    border: none;
 
-     margin:0px;
-}
-.form2{
-    height:500px;
-   width: 15%;
-
-   margin:0px;
-       overflow : hidden;
-}
-.form3{
-    height:500px;
-     width: 15%;
-overflow:hidden;
-     margin:0px
-    
 }
 input .rolle{
-  
-     width:60%;
-     /*background-color:red;*/
+
+    width:60%;
+
 }
 input .vorname{
-     width:80%;
-     /*float:left;*/
-    
+    width:80%;
+    /*float:left;*/
+
 }
 input .nachname{
-   object-position:500px;
     width:60%;
-     /*float:left;*/
-    
+    /*float:left;*/
+
 }
 input .postleitzahl{
-  
+
     width:30%;
-     /*float:left;*/
+    /*float:left;*/
+}
+#grid2{
+    height:100vh;
+    width:100vw;
+}
+#grid{
+    height:100vh;
+    width:100vw;
 }
 input .stadt{
- 
-     width:50%;
-     /*float:left;*/
+
+    width:50%;
+    /*float:left;*/
 }
 input .strasse{
-   
-     width:60%;
-     /*float:left;*/
+
+    width:60%;
+    /*float:left;*/
 }
 input .email{
-   
-     width:60%;
-     /*float:left;*/
+
+    width:60%;
+    /*float:left;*/
 }
 input .passwort{
-   
-     width:60%;
-     /*float:left;*/
+
+    width:50%;
+    /*float:left;*/
 }
 .buttonsmiddle{
     width: 100%;
     text-align:center;
     /*align-content: center;*/
-   }
+}
 
 .contentbox3-1{
-    
+
 }
 .contentbox3-2{
-    
+
 }
 .contentbox3-3{
-    
+
 }
 .conainterfuss1 {
     /*overflow:hidden;*/
-    height:50%;
+    height:100%;
     display: flex;
     /*flex-direction: row;*/
     /*float: left;*/
     /* width: 33.33%; three boxes (use 25% for four, and 50% for two, etc) */
     /* padding: 50px; if you want space between the images */
-    line-height: 10px;
-    font-size: 15px;
-    margin-bottom:10px;
-   
+    line-height: 1vh;
+    font-size: 20px;
+    margin-bottom:1vh;
+
 }
 .image{
-    margin-left:15px;
-     padding-right: 0px;
-     /*margin-right: -2px;*/
+    margin-left:1vh;
+    padding-right: 0px;
+    /*margin-right: -2px;*/
 }
 .kontakt{
-    overflow:hidden;
+    height:20vh;
     /*padding-right: 20px;*/
-    
+
 }
 .Support{
     /*padding-right: 20px;*/
@@ -378,24 +370,24 @@ input .passwort{
 .links1{
     /*padding-right: 20px;*/
 }
-.bezahltaktion { 
+.bezahltaktion {
     /*display: none;*/
 }
 
 
 .navBoxVertical{
-    
 
-    
+
+
 }
 
 
 .contextmenu {
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .buttonpup {
-    font-size:15px !important;
+    font-size:20px !important;
 }
 
 /*.texteinagbe {
@@ -405,7 +397,6 @@ input .passwort{
     height: 25px;
     resize: none;
     box-shadow: none;
-    background-color:red;
     
 }*/
 input:hover{
@@ -414,64 +405,55 @@ input:hover{
 
 .box, .box0, .box1, .box2, .box3, .box4, .box5, .box6, .box7 {
     /*float: left;*/
-   height:100px;
-    padding: 10px;
+    height:10vh;
+    padding: 1vh;
     overflow: hidden;
-    width:430px;
+    width:43vh;
     margin: 0;
-    line-height:25px;
+    line-height:2vh;
     /*float:left;*/
     /*padding-left: px;*/
-    
+
     /*box-sizing: border-box;*/
 }
 .boxdatafields{
     height:auto;
-    margin:0 auto; 
+    margin:0 auto;
     text-align:center;
     width:30%;
 }
 .boxbig{
     width:100%;
-    padding:10px;
+    padding:1vh;
 }
 .boxbundle{
-        line-height:25px;
-    width:450px;
-   height:100px;
-    padding: 10px;
+    line-height:2vh;
+    width:25vw;
+    height:10vh;
+    padding: 1vh;
     overflow: hidden;
     display: inline-block;
     margin:  0;
 }
-.boxtest{
-   height:80px;
-    padding: 10px;
-    overflow: hidden;
-}
-.formtrick{
-    width:50%;
-    left:10%;
-}
 
-.hbutton {
-    background-color: #4CAF50;
+/*.hbutton {
+
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 2vh 3vh;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 2vh;
    
     cursor: pointer;
-}
+}*/
 
 .button {
     border-width: thin;
-    padding: 15px 55px;
-    font-size: 16px;
-    margin: 4px 2px;
+    padding: 2vh 6vh;
+    font-size: 20px;
+    margin: 1vh 1vh;
     color: blue;
     font-family:sans-serif;
     background-color: whitesmoke;
@@ -484,16 +466,21 @@ input:hover{
 }
 
 button.ui-button {
-    padding: 10px 32px;
-    font-size: 16px;
-    margin: 4px 2px;
-    font-family:sans-serif;
-    color: blue;
-}
+    padding: 1vh 3vh;
+    margin-right: 1vh;
+    outline: none;
+    border: 1px solid #0082e6;
+    border-radius: 2vh;
+    cursor: pointer;
+    color: #0082e6;
+    background: transparent;
+    white-space: nowrap;
+    text-align:center;
+}/*
 
 button.ui-button:hover {
     background: lightskyblue;
-}
+}*/
 
 .message{
     color: blue;
@@ -509,28 +496,22 @@ button.ui-button:hover {
 
 
 span + span {
-    margin-left: 50px;
-}
-
-.rightmost{;
-}
-.yellow{
-    background: yellow;
+    margin-left: 5vh;
 }
 
 p{
     font-size: 20px;
-    padding: 15px;
-    line-height: 25px;
-    margin-bottom: 15px;
+    padding: 1vh;
+    line-height: 3vh;
+    margin-bottom: 2vh;
 }
 
 /* Dropdown Button */
 .dropbtn {
     background-color: #04AA6D;
     color: black;
-    padding: 15px;
-    font-size: 16px;
+    padding: 1vh;
+    font-size: 20px;
     border: none;
 }
 
@@ -546,14 +527,14 @@ p{
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 1vh 1vh 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
 /* Links inside the dropdown */
 .dropdown-content a {
     color: black;
-    padding: 12px 16px;
+    padding: 1vh 2vh;
     text-decoration: none;
     display: block;
 }
@@ -580,10 +561,6 @@ p{
 /* mouse over link */
 a:hover {
     color: lightskyblue;
-}
-.white{
-    background-color: whitesmoke;
-    padding: 5px;
 }
 .main{
     background-color:grey
@@ -633,8 +610,8 @@ h2{
 
 }
 
-     
-    
+
+
 
 
 
@@ -656,36 +633,37 @@ a{
 }
 
 .search-box{
-           
-            width: 45%;
-            display: flex;
-            padding-bottom: 3px;
-            border-bottom: 1px solid #ddd;
-            margin-top: 100px;
-          
 
-            
-        }
-        .left-column ,.right-column {
-            flex-basis: 50%;
+    width: 45%;
+    display: flex;
+    padding-bottom: 3px;
+    border-bottom: 1px solid #ddd;
+    margin-top: 10vh;
 
 
 
-        }
-        .right-column img{
-            margin-top: 30px;
-            width: 80%;
+}
+.left-column ,.right-column {
+    flex-basis: 50%;
 
 
-        }
-        .banner{
-            display: flex;
-            background-color: mistyrose;
-            margin-top: 0cm;
-        }
-        
-        .button button {
-            padding: 7px 30px;
+
+}
+.right-column img{
+    margin-top: 3vh;
+    width: 80%;
+
+
+}
+.banner{
+    display: flex;
+    background-color: mistyrose;
+    margin-top: 0cm;
+    height:70vh;
+}
+
+/*        .button button {
+            padding: 7px 3vh;
             margin-right: 15px;
             outline: none;
             border: 1px solid #0082e6;
@@ -693,15 +671,647 @@ a{
             cursor: pointer;
             color: #0082e6;
             background: transparent;
-        }
+                }*/
+
+input[type=button], input[type=submit], input[type=reset]{
+    padding: 1vh 3vh;
+    margin-right: 1vh;
+    outline: none;
+    border: 1px solid #0082e6;
+    border-radius: 2vh;
+    cursor: pointer;
+    color: #0082e6;
+    background: transparent;
+    white-space: nowrap;
+    text-align:center;
+}
+
+
+
+
+
+
+@media (max-width: 1000px) and (max-height:600px){
+    h2{
+       line-height:25px;
+    }
+    table,th,td {
+        font-size:40px;
+    }
+    h3{
+        line-height:40px;
+    }
+    .topcenterdiva{
+    }
+    .banner{
+        height:125vh;
+    }
+    .unternehmen{
+        line-height:10px;
+
+    }
+    body{
+    }
+    .links1{
+        line-height:10px;
+
+    }
+    .Support{
+        line-height:10px;
+    }
+    .kontakt{
+        line-height:10px;
+        height:200px;
+    }
+    .image{
+        display:none;
+    }
+    .right-column{
+        display:none;
+    }
+    .boxbundle{
+        width:30vh !important;
+        height:30vh !important;
+        line-height:20px;
+        font-size: 20px ;
+    }
+    .innen{
+        height:auto !important;
+    }
+    .banner{
+        /*height:80vh;*/
+    }
+
+    /*        .oben{
+                height:22vh;
+            }*/
+
+    .box1{
+        /*padding: 20px;*/
+    }
+    .left-column{
+        width:100%;
+        flex-basis: 100%;
+        text-align:center;
+
+    }
+    .contentbox3-1{
+        width:30%;
         
-        input[type=button], input[type=submit], input[type=reset]{
-            padding: 7px 30px;
-            margin-right: 15px;
-            outline: none;
-            border: 1px solid #0082e6;
-            border-radius: 20px;
-            cursor: pointer;
-            color: #0082e6;
-            background: transparent;
-        }
+    }
+    /*        .contentbox3-2{
+                display:none;
+            }*/
+    .contentbox3-3{
+        display:none;
+    }
+    .innen2 {
+        /*float: left;*/
+        text-align: left;
+        border-bottom: 0px solid green;
+        border-top: 0px solid green;
+        border-left: 0px solid green;
+        border-right: 0px solid green;
+        padding: 0px;
+        display:block;
+
+        background-color: mistyrose;
+
+    }
+    .boxbundle2{
+        line-height:2vh;
+        /*width:25vh !important;*/
+        padding: 1vh;
+        font-size: 30px ;
+        overflow: hidden;
+        display: inline-block;
+        margin:  0;
+        height:60vh !important;
+        /*font-size:30px;*/
+    }
+
+}
+
+
+@media (max-width: 600px) and (max-height:1000px){
+    .image{
+        display:none;
+    }
+    .right-column{
+        display:none;
+    }
+    .boxspecial{
+        width:30vw !important;
+        font-size: 15px ;
+    }
+    .innen{
+        height:auto !important;
+    }
+
+    .oben{
+        /*height:100vh;*/
+        text-align:center;
+        height:auto !important;
+    }
+    .unten{
+        /*            height:auto !important;*/
+    }
+
+    .navBox{
+        text-align:center;
+        /*height:7vh;*/
+
+    }
+    .left-column{
+        width:100%;
+        flex-basis: 100%;
+        text-align:center;
+    }
+ .boxspecial{
+display:block;
+        line-height: 1.3;
+        width:60vh !important;
+        height:25vh !important;
+        /*font-size: 13px !important;*/
+
+
+    }
+    
+    #startbundle1{
+        /*            margin-top:40px !important;
+                    position:*/
+        margin-top:20px !important;
+        
+    }
+    #startbundle2{
+     height:120px !important;   
+    }
+    .conainterfuss1{
+        display:block
+    }
+    .contentbox3-3{
+        display:none;
+    }
+    .button{
+        height:5vh;
+        margin:2px
+    }
+    .contentbox3-1{
+        width: 100%;
+        height: 20%;
+    }
+    .contentbox3-2{
+        width: 100%;
+        height: 100%;
+    }
+    .columnHigh{
+        width:50% !important;
+    }
+    .contenbox1 {
+        width:100% !important;
+    }
+    .topcenterdiva{
+        width:100% !important;
+    }
+
+    .unternehmen{
+        text-align:center;
+
+    }
+    .links1{
+        text-align:center;
+
+    }
+    .Support{
+        text-align:center;
+    }
+    .kontakt{
+        height:18vh;
+        text-align:center;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 667px) and (max-height: 375px){
+    table,th,td {
+        font-size:18px;
+    }
+        .box,.box1{
+
+        width:90vh !important;
+        height:20vh !important;
+        font-size: 16px !important;
+        line-height: 1.3;
+    }
+     input[type=text] {
+        height:30px !important;
+        width:500px !important;
+        font-size:30px !important;
+    }
+    h2{
+        font-size:25px !important;
+        margin-top:10px !important;
+    }
+    .box{
+        
+    }
+    .boxbundle{
+        display:block;
+        width:90vw !important;
+    }
+    label{
+        font-size:25px !important;
+    }
+    input[type=passwort] {
+        height:30px !important;
+    }
+    h3{
+        line-height:70px;
+    }
+    .button {
+        font-size:20px !important;
+    }
+    /*   .unternehmen{
+         text-align:center;
+          font-size:17px;
+    
+    }
+    .links1{
+         text-align:center;
+         line-height:20px;
+          font-size:17px;
+    
+    }
+    .Support{
+        text-align:center;
+        font-size:15px;
+    }
+    .kontakt{
+        height:50vh;
+        text-align:center;
+         font-size:17px;
+    }*/
+    .image{
+        display:none;
+    }
+    .right-column{
+        display:none;
+    }
+    /*     .boxspecial{
+            width:50vh !important;
+            font-size: 20px ;
+            line-height:5px;
+        }*/
+    .navBox{
+        display:none;
+    }
+    .banner{
+        height:125vh;
+    }
+    .navBoxalt2{
+        display:block;
+    }
+    .navBoxalt{
+        display:none;
+    }
+    navBox{
+        width:50%;
+
+    }
+
+    .oben{
+    }
+    .left-column{
+        width: auto;
+        flex-basis: 100%;
+
+
+    }
+    h1{
+        font-size: 30px;
+        margin-bottom: 10vh;
+        margin-top: 5vh;
+    }
+    .untertitel{
+        font-size: 22px;
+        margin-bottom: 10vh;
+    }
+    p{
+        margin-left: 0vh;
+        line-height: 1.4;
+
+
+    }
+    .boxspecial{
+
+        line-height: 1.3;
+        margin-left: 10vh;
+        width:60vh !important;
+        height:25vh !important;
+        /*font-size: 13px !important;*/
+
+
+    }
+    
+    #startbundle1{
+        /*            margin-top:40px !important;
+                    position:*/
+        margin-top:20px !important;
+        
+    }
+    #startbundle2{
+     height:120px !important;   
+    }
+    .conainterfuss1{
+        display:block
+    }
+    .Support{
+        line-height:10px;
+        text-align:center;
+    }
+    .kontakt{
+        line-height:10px;
+        height:200px;
+        text-align:center;
+    }
+    .unternehmen{
+        text-align:center;
+    }
+    .links1{
+        text-align:center;
+    }
+    .contentbox3-1{
+        font-size: 16px !important;
+        margin-left: 8vh;
+        width:20 vw;
+    }
+    .contentbox3-2{
+        font-size: 14px !important;
+    }
+    .contentbox3-3{
+        display: none;
+    }
+    .kontakt{
+
+    }
+    .copyright{
+        display:none;
+    }
+    .telefon{
+        display:none;
+    }
+    .buttonsmiddle{
+        font-size: 13px !important;
+    }
+    .banner h1{
+        margin-bottom: 0vh;
+        margin-top: 5vh;
+        line-height: 1.3;
+
+
+    }
+    .banner h3{
+        margin-bottom: 10vh;
+        line-height: 1.3;
+    }
+    .banner  p{
+        margin-left: 0vh;
+        line-height: 1.3;
+
+    }
+    .contenbox h1{
+        margin-bottom: 3vh;
+    }
+
+    .contenbox h2 {
+    }
+    .navBoxVertical{
+    }
+
+    .box0{
+        margin-top: 2vh;
+        line-height: 20px !important;
+        height:75px !important;
+        font-size:30px !important;
+    }
+    .topcenterdiva h5{
+        margin-bottom: 2vh;
+        margin-top:2vh;
+    }
+    .boxbig {
+        font-size: 15px !important;
+    }
+    .bodydaten {
+        display: none;
+    }
+    .dataAWT {
+        display: none;
+    }
+    .contentbox3-1{
+        font-size: 35px !important;
+
+
+
+    }
+    .innen{
+        height:600px !important;
+    }
+    
+ }
+@media (max-width: 375px) and (max-height: 667px){
+    input[type=text] {
+        height:30px !important;
+        width:400px !important;
+        font-size:30px !important;
+    }
+    table,th,td {
+        font-size:18px;
+    }
+    h2{
+        font-size:25px !important;
+        margin-top:10px !important;
+    }
+    .boxbundle{
+        display:block;
+        width:90vw;
+    }
+    label{
+        font-size:25px !important;
+    }
+    input[type=passwort] {
+        height:30px !important;
+    }
+     .button {
+        height: 50px !important;
+    }
+    
+    .image{
+        display:none;
+    }
+    .right-column{
+        display:none;
+    }
+    .banner{
+        height: 800px !important;
+    }
+    .boxspecial{
+
+
+    }
+    .image{
+        display:none;
+    }
+    .right-column{
+        display:none;
+    }
+    .navBox{
+        display:none;
+    }
+    .navBoxalt{
+        display:block;
+    }
+   .navBoxalt2{
+        display:none !important;
+    }
+    /* startseite*/
+    /*        .banner{
+                height:100vh;
+            }*/
+    h1{
+        line-height:35px;
+    }
+    .navBox{
+        width:100%;
+
+    }
+    .innen{
+
+
+        display:block;
+    }
+    .oben{
+        height:6vh;
+    }
+    .left-column{
+        width: auto;
+        flex-basis: 100%;
+        overflow:hidden;
+        
+
+
+    }
+
+
+    h1{
+        font-size: 6vh;
+        margin-bottom: 5vh;
+        margin-top: -3vh;
+    }
+    .untertitel{
+        font-size: 3vh;
+        margin-bottom: 3vh;
+        line-height: 1;
+    }
+    p{
+        font-size: 2.5vh;
+        margin-left: 0vh;
+        line-height: 1.4;
+
+
+    }
+    /*        .boxbundle{
+                
+                line-height: 1.4;
+                margin-left: 0vh;
+                width:20vh !important;
+                height:15vh !important;
+                font-size: 15px !important;
+               
+         
+            }*/
+    h3{
+        line-height:30px;
+    }
+    .conainterfuss1{
+        display:block
+    }
+    .Support{
+        line-height:20px;
+        text-align:center;
+    }
+    .kontakt{
+        line-height:20px;
+        height:300px;
+        text-align:center;
+    }
+    .unternehmen{
+        line-height:20px;
+        text-align:center;
+    }
+    .links1{
+        line-height:20px;
+        text-align:center;
+    }
+
+    /* organisationen*/
+    .contentbox3-3{
+        display:none;
+    }
+
+
+    .contentbox3-2  {
+        margin-top: 5vh;
+        width: 100%;
+        height:100%;
+        font-size:1.3vh;
+
+    }
+    .contenbox1{
+        margin-top: 2vh;
+        width: 95%;
+        height:60%;
+        font-size:1.3vh;
+    }
+    .contentbox3-2 h3{
+        font-size: 4vh;
+        margin-top:2vh;
+        margin-left: 5vh;
+
+    }
+    .contentbox3-1 h3{
+        font-size: 4vh;
+        margin-top:2vh;
+
+
+    }
+    .contenbox1 h2 {
+        margin-top: -0.5vh;
+        font-size: 2.5vh;
+    }
+/*    .boxbundle1{
+        line-height: 1.2;
+    }*/
+    .contentbox3-1{
+        margin-top: 1vh;
+        width: 60%;
+        font-size: 35px;
+        height: 60vh;
+
+
+    }
+
+
+}
