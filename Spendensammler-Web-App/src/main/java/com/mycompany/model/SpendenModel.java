@@ -86,6 +86,7 @@ public class SpendenModel implements Serializable {
             return null;
         }
     }
+    
     public String spendenpräsentation() {
         // Prüfung ob Benutzer angemeldet ist
         if(sessiondata.getBenutzer() != null) {
@@ -106,6 +107,23 @@ public class SpendenModel implements Serializable {
             Einkommen einkommen = jahreseinkommen();
             charityController.updateEinkommen(einkommen.getIdEinkommen(), this.betrag);
             userController.newQuittung(this.betrag, spendenaktion, this.charity, sessiondata.getBenutzer());
+            einkommenModel.listeNeu();
+            orgaEinkommenModel.einkommenliste();
+            return "/User/SpendenDanke.xhtml?faces-redirect=true";
+        } else {
+            FacesMessage message = new FacesMessage(FacesMessage.SEVERITY_INFO, "Info", "Sie sind momentan nicht angemeldet!");
+            PrimeFaces.current().dialog().showMessageDynamic(message);
+            return null;
+        }
+    }
+    public String spendestripe(int betrag) {
+        // Prüfung ob Benutzer angemeldet ist
+        if(sessiondata.getBenutzer() != null) {
+            Einkommen einkommen = jahreseinkommen();
+            charityController.updateEinkommen(einkommen.getIdEinkommen(),betrag);
+            System.out.println("here is" + this.charity.getName());
+            System.out.println("here is" + sessiondata.getBenutzer().getNachname());
+            userController.newQuittung(betrag, "", this.charity, sessiondata.getBenutzer());
             einkommenModel.listeNeu();
             orgaEinkommenModel.einkommenliste();
             return "/User/SpendenDanke.xhtml?faces-redirect=true";
