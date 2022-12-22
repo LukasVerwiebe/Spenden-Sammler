@@ -1,5 +1,6 @@
-/**
+
 import com.mycompany.services.CharityService;
+import java.sql.Date;
 import static org.junit.Assert.*;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Order;
@@ -11,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import spendensammler.jpa.entities.Charity;
 import spendensammler.jpa.entities.Charity_Organisation;
 import spendensammler.jpa.entities.Kategorie;
+import spendensammler.jpa.entities.PlaceOfAction;
 
 
 @ExtendWith(MockitoExtension.class)
@@ -25,11 +27,16 @@ public class CharityTest {
    private Charity charity3;
    private Charity charity4;
    private Charity charityFilter;
+   
    private Charity_Organisation chOrga1;
    private Charity_Organisation chOrga2;
    private Charity_Organisation chOrga3;
    private Charity_Organisation chOrga4;
    private Charity_Organisation chOrga5;
+   
+   private Kategorie kategorie;
+   
+   private PlaceOfAction place;
    
    
   
@@ -80,6 +87,10 @@ public class CharityTest {
          chOrga5 = new Charity_Organisation();
          charityFilter.setCh_orga(chOrga5);
          chOrga5.setCharity(charityFilter);
+         
+         kategorie = new Kategorie("TestKategorie");
+         
+         place = new PlaceOfAction("TestPlace", "TPE");
          
          
     }
@@ -179,6 +190,46 @@ public class CharityTest {
         assertEquals(charityService.findeCharity(charityFilter.getName()).size(), 0);
          
     }
+    
+    @Test        
+    void testHeutigesDatum() {
+        Date date = new Date(2022-12-19);
+        assertTrue(date.before(charityService.heutigesDatum()));
+         
+    }
+    
+    @Test        
+    void testKategorie() {
+        int listGroesse = charityService.findAllCategories().size();
+        
+        charityService.createNewKategorie(kategorie);
+        assertEquals(listGroesse + 1, charityService.findAllCategories().size());
+        
+        charityService.updateKategorie(kategorie.getIdKategorie(), "neueTestKategorie");
+        assertEquals(charityService.findAllCategories().get(charityService.findAllCategories().indexOf("neueTestKategorie")), "neueTestKategorie");
+        
+        listGroesse = charityService.findAllCategories().size();
+        charityService.removeKategorie(kategorie);
+        assertEquals(listGroesse - 1, charityService.findAllCategories().size());
+        
+         
+    }
+    
+    @Test        
+    void testPlace() {
+        int listGroesse = charityService.findAllPlaces().size();
+        
+        charityService.createNewPlaceOfAction(place);
+        assertEquals(listGroesse + 1, charityService.findAllPlaces().size());
+        
+        charityService.updatePlaceOfAction(place.getIdPlaceOfAction(), "neuesTestPlace");//.updateKategorie(kategorie.getIdKategorie(), "neueTestKategorie");
+        assertEquals(charityService.findAllPlaces().get(charityService.findAllPlaces().indexOf("neuesTestPlace")), "neuesTestPlace");//.findAllCategories().get(charityService.findAllCategories().indexOf("neueTestKategorie")), "neueTestKategorie");
+        
+        listGroesse = charityService.findAllPlaces().size();
+        charityService.removePlaceOfaction(place);
+        assertEquals(listGroesse - 1, charityService.findAllPlaces().size());
+        
+         
+    }
 
 }
-**/

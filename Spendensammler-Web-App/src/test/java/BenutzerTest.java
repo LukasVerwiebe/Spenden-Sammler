@@ -1,4 +1,4 @@
-/**import com.mycompany.services.CharityService;
+import com.mycompany.services.CharityService;
 import com.mycompany.services.UserService;
 import org.hibernate.engine.jdbc.spi.SqlExceptionHelper;
 import static org.junit.Assert.*;
@@ -7,6 +7,8 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import static org.mockito.MockitoAnnotations.initMocks;
 import org.mockito.junit.jupiter.MockitoExtension;
 import spendensammler.jpa.entities.Benutzer;
 import spendensammler.jpa.entities.Charity;
@@ -24,12 +26,15 @@ public class BenutzerTest {
     private Benutzer user2;
     private Charity charity1;
     private Quittung quittung1;
+    private Quittung quittungAdmin;
     
     
     
     @BeforeEach
     void setUp() {
+        
         userService = new UserService();
+        
          
         user1 = new Benutzer("vorname1", "nachname1", 
                 "email@1.de", "passwort1", "Admin", true);
@@ -43,7 +48,9 @@ public class BenutzerTest {
                 "website1", "worldview1", "fieldsOfAction1",
                 "bericht1");
         
-        quittung1 = new Quittung(1.00, "text1");
+        quittung1 = new Quittung(1.00, "testQuittung");
+        
+        quittungAdmin = new Quittung(1.00, "testQuittungAdmin");
          
         
     }
@@ -74,16 +81,32 @@ public class BenutzerTest {
     
     @Test
     void testCreateQuittung1() {
-        userService.createNewQuittung(quittung1);
-        
-        assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), quittung1.getTextQuittung());
-        
-        userService.updateQuittung(quittung1.getIdQuittung(), 1.00, "textUpdate");
-        assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), "textUpdate");
-        
         int listGroesse = userService.findAllQuittungen().size();
+        
+        userService.createNewQuittung(quittung1);
+        assertEquals(listGroesse + 1, userService.findAllQuittungen().size());
+        
+        userService.updateQuittung(quittung1.getIdQuittung(), 1.00, "neueTestQuittung");
+        assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().indexOf(quittung1)).getTextQuittung(), "neueTestQuittung");
+        
+        listGroesse = userService.findAllQuittungen().size();
         userService.removeQuittung(quittung1);
         assertEquals(listGroesse - 1, userService.findAllQuittungen().size());
+        
+        
+    }
+    
+    @Test
+    void testQuittungAdmin() {
+//        int listGroesse = userService.findAllQuittungen().size();
+//        
+//        
+//        userService.createNewQuittungAdmin(1.00, "testQuittungAdmin");
+//        assertEquals(listGroesse + 1, userService.findAllQuittungen().size());
+//        
+//        listGroesse = userService.findAllQuittungen().size();
+//        userService.removeQuittung(quittungAdmin);
+//        assertEquals(listGroesse - 1, userService.findAllQuittungen().size());
         
         
     }
@@ -93,7 +116,7 @@ public class BenutzerTest {
         int listGroesse1 = userService.diagrammQuittungen(2022).size();
         
         userService.createNewQuittung(quittung1);
-        assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), quittung1.getTextQuittung());
+//        assertEquals(userService.findAllQuittungen().get(userService.findAllQuittungen().size() - 1).getTextQuittung(), quittung1.getTextQuittung());
         assertEquals(userService.diagrammQuittungen(2022).size(), listGroesse1 + 1);
                 
         int listGroesse = userService.findAllQuittungen().size();
@@ -102,7 +125,9 @@ public class BenutzerTest {
         
         
     }
+    
+    
 
 }    
-    **/
+    
     
