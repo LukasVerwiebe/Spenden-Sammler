@@ -15,5 +15,6 @@ Die Aufgabe war es, eine Webseite für das Sammeln von Spenden zu erstellen. Zie
 
 Die Webanwendung wurde mit dem Framework Java Server Faces erstellt. Hierbei handelt es sich um ein serverseitiges Framework. Java Server Faces verbirgt die Komplexität der Webanwendungsentwicklung. Für die Speicherung von Daten wurde die Java Persistence API verwendet. Die damit in der Datenbank persistierten Daten können über die Frontend Schnittstelle zur Verfügung gestellt werden. Die Benutzeroberfläche wurde mittels des UI-Frameworks PrimeFaces erstellt.
 
-Web-Link: WHS Show & Tell 2023
+## Web-Link: WHS Show & Tell 2023
 
+https://www.w-hs.de/informatik/show-tell/2023/
