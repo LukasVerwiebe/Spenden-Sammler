@@ -1,2 +1,0 @@
-# Spenden-S
-ammler
