@@ -1,5 +1,7 @@
 # Software-Projekt 2023: Spenden-Sammler
 
+In diesem Repository ist das Software-Projekt welches im Rahmen des Studiums im 4 und 5 Semester in einer Gruppe in Zusammenarbeit mit einem Professor erstellt werden muss. Es handelt sich dabei um das Projekt "Entwicklung von Informationssystemen mit SCRUM", welches ganzjährig von 2022 bis 2023 umgesetzt wurde.
+
 Die Aufgabe war es, eine Webseite für das Sammeln von Spenden zu erstellen. Ziel war, dass sich Spender und Spendenorganisationen einen Account anlegen können und mittels z.B. Paypal Spenden an die Organisationen entrichten können. Spender und Organisationen sollen diese Spenden in Form von Quittungen nachvollziehen können.
 
 
